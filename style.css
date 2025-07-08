@@ -1,9 +1,9 @@
-/* 공통 */
+/* 기본 리셋 */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
+body { font-family:'Noto Sans KR',sans-serif; background:#fff; color:#333; }
 .container { width:90%; max-width:1200px; margin:0 auto; }
 
-/* 히어로 */
+/* HERO TITLE */
 .compare-hero {
   background:#0033a0;
   color:#fff;
@@ -13,24 +13,29 @@ body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
 .compare-hero h1 { font-size:36px; font-weight:700; }
 .compare-hero p  { font-size:18px; margin-top:12px; }
 
-/* 슬라이더 */
+/* SLIDER */
 .compare-slider {
   position:relative;
   background:#0033a0;
   padding:40px 0 80px;
+  text-align:center;
+}
+.slider-wrapper {
+  overflow:hidden;
+  margin:0 60px; /* 화살표 영역 확보 */
 }
 .slider-track {
   display:flex;
-  overflow:hidden;
-  scroll-behavior:smooth;
+  transition:transform 0.6s ease;
+  will-change:transform;
 }
 .slide {
   flex:0 0 200px;
+  margin:0 10px;
   background:#fff;
   border-radius:8px;
-  text-align:center;
   padding:20px 10px;
-  margin:0 10px;
+  text-align:center;
 }
 .slide img {
   width:120px;
@@ -41,20 +46,24 @@ body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
   width:100%;
   padding:8px;
   font-size:14px;
+  text-align:center;
   border:1px solid #ccc;
   border-radius:4px;
-  text-align:center;
 }
 
-/* 화살표 */
+/* 화살표 버튼 */
 .arrow {
   position:absolute;
-  top:50%; transform:translateY(-50%);
+  top:50%;
+  transform:translateY(-50%);
   width:40px; height:80px;
   background:rgba(0,0,0,0.3);
-  color:#fff; border:none;
-  font-size:36px; cursor:pointer;
+  color:#fff;
+  border:none;
+  font-size:36px;
+  cursor:pointer;
   z-index:10;
+  user-select:none;
 }
 .prev { left:0; }
 .next { right:0; }
@@ -65,9 +74,10 @@ body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
   margin-top:24px;
   padding:12px 24px;
   background:#00aaff;
-  color:#fff; text-decoration:none;
-  font-weight:700;
+  color:#fff;
   border-radius:24px;
+  font-weight:700;
+  text-decoration:none;
   transition:background .3s;
 }
 .btn-compare:hover { background:#008ecc; }
@@ -78,7 +88,8 @@ body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
   text-align:center;
 }
 .inquiry h2 {
-  font-size:28px; margin-bottom:24px;
+  font-size:28px;
+  margin-bottom:24px;
 }
 #consult-form {
   display:inline-flex;
@@ -97,7 +108,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
   border-radius:6px;
 }
 .btn-submit {
-  flex:1 1 120px;
+  flex:1 1 140px;
   padding:12px;
   background:#0033a0;
   color:#fff;
