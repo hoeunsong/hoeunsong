@@ -1,121 +1,144 @@
-/* 기본 리셋 */
+/* reset */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans KR',sans-serif; background:#fff; color:#333; }
-.container { width:90%; max-width:1200px; margin:0 auto; }
+body { font-family:'Noto Sans KR',sans-serif; color:#333; }
 
-/* HERO TITLE */
-.compare-hero {
-  background:#0033a0;
-  color:#fff;
-  text-align:center;
-  padding:60px 0;
-}
-.compare-hero h1 { font-size:36px; font-weight:700; }
-.compare-hero p  { font-size:18px; margin-top:12px; }
-
-/* SLIDER */
-.compare-slider {
-  position:relative;
-  background:#0033a0;
-  padding:40px 0 80px;
-  text-align:center;
-}
-.slider-wrapper {
+/* HERO SLIDER */
+.hero {
+  position: relative;
+  background:#002d72;
   overflow:hidden;
-  margin:0 60px; /* 화살표 영역 확보 */
-}
-.slider-track {
+  height:200px;
   display:flex;
-  transition:transform 0.6s ease;
-  will-change:transform;
+  align-items:center;
 }
-.slide {
-  flex:0 0 200px;
-  margin:0 10px;
-  background:#fff;
-  border-radius:8px;
-  padding:20px 10px;
-  text-align:center;
-}
-.slide img {
-  width:120px;
-  height:auto;
-  margin-bottom:12px;
-}
-.slide input {
-  width:100%;
-  padding:8px;
-  font-size:14px;
-  text-align:center;
-  border:1px solid #ccc;
-  border-radius:4px;
-}
-
-/* 화살표 버튼 */
-.arrow {
+.slider-arrow {
   position:absolute;
-  top:50%;
-  transform:translateY(-50%);
+  top:50%; transform:translateY(-50%);
+  font-size:36px; color:#fff;
   width:40px; height:80px;
   background:rgba(0,0,0,0.3);
-  color:#fff;
-  border:none;
-  font-size:36px;
-  cursor:pointer;
-  z-index:10;
-  user-select:none;
+  text-align:center; line-height:80px;
+  cursor:pointer; z-index:10;
 }
 .prev { left:0; }
 .next { right:0; }
+.slider-track {
+  display:flex;
+  transition:transform .6s ease;
+  margin:0 60px;
+}
+.slide {
+  flex:0 0 180px;
+  background:#fff;
+  border-radius:8px;
+  margin:0 10px;
+  text-align:center;
+  padding:12px;
+}
+.slide img {
+  width:120px; margin-bottom:8px;
+}
+.slide input {
+  width:100%;
+  padding:6px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-size:14px;
+}
 
-/* 비교 버튼 */
-.btn-compare {
+/* CTA */
+.cta {
+  background:#0088ff;
+  text-align:center;
+  padding:16px 0;
+}
+.cta a {
   display:inline-block;
-  margin-top:24px;
-  padding:12px 24px;
-  background:#00aaff;
   color:#fff;
+  background:#00c0ff;
+  padding:12px 24px;
   border-radius:24px;
   font-weight:700;
   text-decoration:none;
-  transition:background .3s;
 }
-.btn-compare:hover { background:#008ecc; }
+.cta p {
+  color:#e0f7ff;
+  margin-top:8px;
+  font-size:14px;
+}
 
-/* 상담 폼 */
-.inquiry {
-  padding:60px 0;
+/* LOGO GRID */
+.logo-grid {
   text-align:center;
+  padding:24px 0;
 }
-.inquiry h2 {
-  font-size:28px;
+.logo-grid img {
+  max-width:90%;
+  height:auto;
+}
+
+/* FORM */
+.inquiry-form {
+  background:#f9f9f9;
+  padding:40px 0;
+}
+.container { width:90%; max-width:600px; margin:0 auto; }
+.inquiry-form h2 {
+  text-align:center;
   margin-bottom:24px;
+  font-size:24px;
 }
-#consult-form {
-  display:inline-flex;
-  gap:12px;
-  flex-wrap:wrap;
+#consult-form .row {
+  margin-bottom:12px;
+  display:flex;
   justify-content:center;
-}
-#consult-form label {
-  flex:1 1 200px;
+  gap:8px;
 }
 #consult-form input,
 #consult-form select {
-  width:100%;
-  padding:10px;
+  flex:1;
+  padding:8px 12px;
   border:1px solid #ccc;
-  border-radius:6px;
+  border-radius:4px;
+  font-size:14px;
 }
-.btn-submit {
-  flex:1 1 140px;
-  padding:12px;
+.phone-row span {
+  display:flex;
+  align-items:center;
+}
+.checkbox-row { flex-wrap:wrap; }
+.checkbox-row label {
+  flex:1 1 180px;
+  font-size:13px;
+}
+#consult-form button {
+  flex:1;
   background:#0033a0;
   color:#fff;
+  padding:12px;
   border:none;
   border-radius:6px;
-  font-weight:700;
+  font-size:16px;
   cursor:pointer;
-  transition:background .3s;
 }
-.btn-submit:hover { background:#002274; }
+#consult-form button:hover {
+  background:#002274;
+}
+
+/* FOOTER LINKS */
+.footer-links {
+  text-align:center;
+  padding:16px 0;
+  font-size:13px;
+  color:#555;
+}
+.footer-links a {
+  color:#555;
+  text-decoration:none;
+  margin:0 4px;
+}
+.footer-links span { margin:0 4px; }
+.footer-links p {
+  margin-top:8px;
+  color:#888;
+}
