@@ -6,7 +6,11 @@ document.getElementById('downloadBtn').addEventListener('click', function () {
   }
 
   const header = ['이름', '연락처', '보험유형'];
-  const rows = data.map(item => [item.name, item.phone, item.type]);
+  const rows = data.map(item => [
+    item.name,
+    `="${item.phone}"`, // 전화번호는 지수표기 방지
+    item.type
+  ]);
 
   let csvContent = '';
   csvContent += header.join(',') + '\n';
@@ -14,7 +18,6 @@ document.getElementById('downloadBtn').addEventListener('click', function () {
     csvContent += row.map(field => `"${field}"`).join(',') + '\n';
   });
 
-  // BOM 추가
   const BOM = '\uFEFF';
   const blob = new Blob([BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
 

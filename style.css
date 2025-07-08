@@ -1,63 +1,153 @@
-body {
+/* style.css */
+
+/* 전체 reset 및 기본 설정 */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: 'Noto Sans KR', sans-serif;
-  background-color: #ffffff;
+  line-height: 1.6;
   color: #333;
 }
-
 .container {
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 40px;
-  background-color: #f6fffa;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 24px;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #2e7d32;
-  margin-bottom: 8px;
-  text-align: center;
+}
+.nav a {
+  margin-left: 24px;
+  font-weight: 500;
+  color: #555;
+  transition: color 0.3s;
+}
+.nav a:hover {
+  color: #2e7d32;
 }
 
-.subtitle {
-  font-size: 14px;
-  color: #555;
+/* Hero 섹션 */
+.hero {
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding-top: 80px; /* 헤더 높이만큼 offset */
+}
+.hero h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.hero p {
+  font-size: 1.125rem;
+  color: #f0f0f0;
+  margin-bottom: 32px;
+}
+.cta-button {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background-color: #1b5e20;
+}
+
+/* 폼 섹션 */
+.form-section {
+  background-color: #f6fffa;
+  padding: 60px 0;
+}
+.form-section h3 {
+  text-align: center;
+  font-size: 1.75rem;
+  color: #2e7d32;
   margin-bottom: 24px;
 }
-
-form {
+#consult-form {
+  max-width: 480px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-
-label {
-  margin-top: 12px;
+#consult-form label {
+  margin-top: 16px;
   font-weight: 500;
 }
-
-input, select {
-  padding: 10px;
+#consult-form input,
+#consult-form select {
+  padding: 12px;
+  margin-top: 8px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  margin-top: 6px;
 }
-
-button {
+#consult-form button {
   margin-top: 24px;
-  padding: 12px;
-  background-color: #4caf50;
+  padding: 14px;
+  background-color: #2e7d32;
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s;
 }
-
-button:hover {
-  background-color: #388e3c;
+#consult-form button:hover {
+  background-color: #1b5e20;
 }
 
+/* Footer */
+.footer {
+  background-color: #fff;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .nav a {
+    margin-left: 16px;
+    font-size: 0.9rem;
+  }
+}
