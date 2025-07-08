@@ -2,76 +2,69 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Life Insurance</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <h1 class="logo">Life Insurance</h1>
-      <nav class="nav">
-        <a href="#about">회사소개</a>
-        <a href="#services">서비스</a>
-        <a href="#form">상담신청</a>
-      </nav>
+  <!-- HERO TITLE -->
+  <section class="hero-title">
+    <div class="container">
+      <h1>보험사별 보험서비스</h1>
+      <div class="subtitle">견적을 간편하게 비교해요</div>
     </div>
-  </header>
+  </section>
 
-  <!-- SLIDER -->
+  <!-- SMOOTH CONTINUOUS SLIDER -->
   <section class="slider-section">
-    <button class="prev">‹</button>
-    <div class="track">
-      <div class="slide"><img src="slide1.png"  alt="배너1" /></div>
-      <div class="slide"><img src="slide2.png"  alt="배너2" /></div>
-      <div class="slide"><img src="slide3.png"  alt="배너3" /></div>
-      <div class="slide"><img src="slide4.png"  alt="배너4" /></div>
-      <div class="slide"><img src="slide5.png"  alt="배너5" /></div>
-      <div class="slide"><img src="slide6.png"  alt="배너6" /></div>
-      <div class="slide"><img src="slide7.png"  alt="배너7" /></div>
-      <div class="slide"><img src="slide8.png"  alt="배너8" /></div>
-      <div class="slide"><img src="slide9.png"  alt="배너9" /></div>
-      <div class="slide"><img src="slide10.png" alt="배너10"/></div>
-      <div class="slide"><img src="slide11.png" alt="배너11"/></div>
-      <div class="slide"><img src="slide12.png" alt="배너12"/></div>
-      <div class="slide"><img src="slide13.png" alt="배너13"/></div>
-     <!-- 반복 13장 -->
-        <div class="item"><img src="slide1.png"  alt="배너1"/></div>
-        <div class="item"><img src="slide2.png"  alt="배너2"/></div>
-        <div class="item"><img src="slide3.png"  alt="배너3"/></div>
-        <div class="item"><img src="slide4.png"  alt="배너4"/></div>
-        <div class="item"><img src="slide5.png"  alt="배너5"/></div>
-        <div class="item"><img src="slide6.png"  alt="배너6"/></div>
-        <div class="item"><img src="slide7.png"  alt="배너7"/></div>
-        <div class="item"><img src="slide8.png"  alt="배너8"/></div>
-        <div class="item"><img src="slide9.png"  alt="배너9"/></div>
-        <div class="item"><img src="slide10.png" alt="배너10"/></div>
-        <div class="item"><img src="slide11.png" alt="배너11"/></div>
-        <div class="item"><img src="slide12.png" alt="배너12"/></div>
-        <div class="item"><img src="slide13.png" alt="배너13"/></div>
-    </div>
-    <button class="next">›</button>
-  </section>
-
-  <!-- CTA BUTTON -->
-  <section id="cta" class="cta-section">
-    <div class="container">
-      <a href="#form" class="cta-big-button">
-        보험사별 보험 간편 견적비교 →
-      </a>
-      <p class="cta-subtext">
-        보험사별 견적비교를 통해 내게 맞는 최적화된 보험을 찾아드려요
-      </p>
+    <div class="slider-wrapper">
+      <div class="slider-track">
+        <!-- 원본 13장 -->  
+        <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
+        <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
+        <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
+        <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
+        <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
+        <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
+        <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
+        <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
+        <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
+        <div class="slide"><img src="slide10.png" alt="배너10"/></div>
+        <div class="slide"><img src="slide11.png" alt="배너11"/></div>
+        <div class="slide"><img src="slide12.png" alt="배너12"/></div>
+        <div class="slide"><img src="slide13.png" alt="배너13"/></div>
+        <!-- 복제 13장 (연속 스크롤을 위해) -->
+        <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
+        <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
+        <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
+        <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
+        <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
+        <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
+        <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
+        <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
+        <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
+        <div class="slide"><img src="slide10.png" alt="배너10"/></div>
+        <div class="slide"><img src="slide11.png" alt="배너11"/></div>
+        <div class="slide"><img src="slide12.png" alt="배너12"/></div>
+        <div class="slide"><img src="slide13.png" alt="배너13"/></div>
+      </div>
     </div>
   </section>
 
-  <!-- LIST IMAGE -->
-  <section class="list-section">
+  <!-- CTA -->
+  <section class="cta-section">
     <div class="container">
-      <img src="insurer-list.png" alt="국내 32개 공식인증 보험사 리스트" />
+      <a href="#form" class="cta-btn">보험사별 보험 간편 견적비교 →</a>
+      <p class="cta-text">보험사별 견적비교를 통해 내게 맞는 최적화된 보험을 찾아드려요</p>
+    </div>
+  </section>
+
+  <!-- LOGO GRID -->
+  <section class="logo-section">
+    <div class="container">
+      <img src="insurer-list.png" alt="국내 32개 공식인증 보험사 리스트"/>
     </div>
   </section>
 
@@ -80,47 +73,31 @@
     <div class="container">
       <h3>빠른 상담 신청</h3>
       <form id="consult-form">
-        <div class="form-row">
-          <input type="text" id="name"  name="name"  placeholder="이름"      required />
-          <select id="phone1" name="phone1" required>
-            <option value="">010</option>
-            <option>011</option>
-            <option>016</option>
-          </select>
-          <span>-</span>
-          <input type="tel" id="phone2" name="phone2" placeholder="1234" required />
-          <span>-</span>
-          <input type="tel" id="phone3" name="phone3" placeholder="5678" required />
+        <div class="row">
+          <input type="text"  id="name"   name="name"   placeholder="이름" required/>
+          <input type="tel"   id="phone1" name="phone1" placeholder="010"  required/>
+          <span class="dash">–</span>
+          <input type="tel"   id="phone2" name="phone2" placeholder="1234" required/>
+          <span class="dash">–</span>
+          <input type="tel"   id="phone3" name="phone3" placeholder="5678" required/>
         </div>
-        <div class="form-row">
+        <div class="row">
           <select id="type" name="type" required>
             <option value="">문의가 필요한 보험 유형</option>
-            <option value="건강보험">건강보험</option>
-            <option value="치아보험">치아보험</option>
-            <option value="암보험">암보험</option>
-            <option value="운전자보험">운전자보험</option>
+            <option>건강보험</option>
+            <option>치아보험</option>
+            <option>암보험</option>
+            <option>운전자보험</option>
           </select>
         </div>
-        <div class="form-row checkboxes">
-          <label><input type="checkbox" required /> 견적확인(수집/제3자 제공)</label>
-          <label><input type="checkbox" required /> 개인정보 수집·이용 동의</label>
-          <label><input type="checkbox" required /> 개인정보 제3자 제공 동의</label>
+        <div class="row check-row">
+          <label><input type="checkbox" required/> 견적확인 (수집/제3자 제공)</label>
+          <label><input type="checkbox" required/> 개인정보 수집·이용 동의</label>
+          <label><input type="checkbox" required/> 개인정보 제3자 제공 동의</label>
         </div>
-        <button type="submit" class="form-submit">통합 견적비교 조회 →</button>
+        <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
       </form>
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>
-        생명보험 | 종신보험 | 간병인보험 | 암보험<br>
-        건강보험 | 태아보험 | 연금보험 등<br>
-        국내 유명사보험별 비교 견적을 통해 좋은 보험을 찾습니다.
-      </p>
-      <small>ⓒ 2025 Life Insurance. All Rights Reserved.</small>
-    </div>
-  </footer>
 </body>
 </html>

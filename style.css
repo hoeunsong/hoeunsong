@@ -1,89 +1,79 @@
 /* RESET */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans KR',sans-serif; }
+body { font-family:'Noto Sans KR',sans-serif; background:#fff; }
 
 /* CONTAINER */
 .container { width:90%; max-width:1200px; margin:0 auto; }
 
-/* HEADER */
-.header { background:#fff; padding:20px 0; }
-.header-inner { display:flex; align-items:center; justify-content:space-between; }
-.logo { color:#2e7d32; font-size:24px; font-weight:700; }
-.nav a { margin-left:24px; color:#333; text-decoration:none; font-weight:500; }
+/* HERO TITLE */
+.hero-title {
+  background:#002d72; color:#fff; text-align:center; padding:80px 0;
+}
+.hero-title h1 { font-size:48px; font-weight:700; }
+.hero-title .subtitle {
+  display:inline-block; background:#fff; color:#002d72;
+  padding:6px 16px; margin-top:12px; font-size:24px;
+  border-radius:4px;
+}
 
 /* SLIDER */
-.slider-section {
-  position:relative;
-  background:#002d72;
-  padding:40px 0;
+.slider-section { overflow:hidden; }
+.slider-wrapper {
   overflow:hidden;
 }
-.track {
+.slider-track {
   display:flex;
-  animation:scroll 13s steps(13) infinite;
+  width:max-content;
+  animation:scroll 26s linear infinite;
 }
-.slide { flex:0 0 180px; margin:0 10px; }
-.slide img { width:100%; border-radius:8px; display:block; }
-
-.prev, .next {
-  position:absolute; top:50%; transform:translateY(-50%);
-  background:rgba(0,0,0,0.5); color:#fff; border:none;
-  font-size:24px; padding:0 12px; cursor:pointer;
+.slide {
+  flex:0 0 180px;
+  margin:0 10px;
 }
-.prev { left:10px; } .next { right:10px; }
+.slide img {
+  width:100%; display:block; border-radius:8px;
+}
 
+/* continuous scroll */
 @keyframes scroll {
-  0%   { transform:translateX(0); }
-  100% { transform:translateX(calc(-190px * 13)); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(- (180px + 20px) * 13 )); }
 }
 
-/* CTA SECTION */
+/* CTA */
 .cta-section {
-  text-align:center;
-  padding:40px 0;
-  background:transparent;
+  text-align:center; padding:40px 0; background:#002d72; color:#fff;
 }
-.cta-big-button {
+.cta-btn {
   display:inline-block; background:#00c8ff; color:#fff;
-  font-size:20px; font-weight:700;
-  padding:16px 36px; border-radius:28px;
-  text-decoration:none; transition:background .3s;
+  padding:16px 36px; font-size:20px; font-weight:700;
+  border-radius:28px; text-decoration:none; transition:background .3s;
 }
-.cta-big-button:hover { background:#00a4cc; }
-.cta-subtext { margin-top:12px; color:#fff; font-size:14px; }
+.cta-btn:hover { background:#00a4cc; }
+.cta-text { margin-top:12px; font-size:14px; }
 
-/* LIST SECTION */
-.list-section { background:#f4f4f4; padding:40px 0; text-align:center; }
-.list-section img { max-width:100%; }
+/* LOGO GRID */
+.logo-section {
+  background:#f7f7f7; padding:40px 0; text-align:center;
+}
+.logo-section img { max-width:100%; }
 
-/* FORM SECTION */
+/* FORM */
 .form-section { padding:60px 0; background:#fff; }
-.form-section h3 {
-  text-align:center; margin-bottom:24px;
-  color:#002d72; font-size:20px; font-weight:700;
-}
+.form-section h3 { text-align:center; margin-bottom:24px; color:#002d72; }
 form { max-width:800px; margin:0 auto; }
-.form-row { display:flex; justify-content:space-between; margin-bottom:16px; }
-.form-row input,
-.form-row select {
+.row { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:16px; }
+.row input, .row select {
   flex:1; padding:12px; font-size:14px;
   border:1px solid #ccc; border-radius:4px;
 }
-.form-row input + span,
-.form-row select + span { margin:0 8px; align-self:center; }
-
-.checkboxes label {
-  flex:1; font-size:13px; color:#333;
-  display:flex; align-items:center;
+.dash { font-size:18px; }
+.check-row label { flex:1; display:flex; align-items:center; font-size:13px; }
+.check-row input { margin-right:6px; }
+.submit-btn {
+  display:block; width:100%; padding:16px;
+  background:#002d72; color:#fff; font-size:18px;
+  border:none; border-radius:4px; cursor:pointer;
+  transition:background .3s;
 }
-.checkboxes input { margin-right:6px; }
-.form-submit {
-  width:100%; padding:16px; background:#002d72; color:#fff;
-  font-size:18px; border:none; border-radius:4px;
-  cursor:pointer; transition:background .3s;
-}
-.form-submit:hover { background:#001f5c; }
-
-/* FOOTER */
-.footer { background:#002d72; color:#fff; padding:40px 0; text-align:center; font-size:13px; }
-.footer small { display:block; margin-top:12px; color:#ccc; }
+.submit-btn:hover { background:#001f5c; }
