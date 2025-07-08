@@ -1,13 +1,14 @@
 // admin.js
 document.addEventListener("DOMContentLoaded", () => {
   const tbody = document.querySelector("#consult-table tbody");
-  const initialData = JSON.parse(localStorage.getItem("consults") || "[]");
+  const data = JSON.parse(localStorage.getItem("consults") || "[]");
 
   // 테이블 채우기
-  if (initialData.length === 0) {
+  if (data.length === 0) {
     tbody.innerHTML = `<tr><td colspan="4">신청 내역이 없습니다.</td></tr>`;
   } else {
-    initialData.forEach(item => {
+    tbody.innerHTML = "";  // 초기화
+    data.forEach(item => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${item.name}</td>
@@ -19,28 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 다운로드 버튼 핸들러
+  // CSV 다운로드
   document.getElementById("downloadBtn").addEventListener("click", () => {
-    // 클릭 시 최신 데이터 로드
-    const data = JSON.parse(localStorage.getItem("consults") || "[]");
-    if (data.length === 0) {
+    const rows = JSON.parse(localStorage.getItem("consults") || "[]");
+    if (rows.length === 0) {
       return alert("저장된 신청 내역이 없습니다.");
     }
 
-    // CSV 생성
+    // 헤더
     const header = ["이름","연락처","보험유형","신청시간"];
     let csv = header.join(",") + "\n";
-    data.forEach(item => {
-      const row = [
-        item.name,
-        item.phone,
-        item.type,
-        new Date(item.timestamp).toISOString()
-      ];
-      csv += row.map(f => `"${f}"`).join(",") + "\n";
+
+    // 내용
+    rows.forEach(r => {
+      const time = new Date(r.timestamp).toLocaleString();
+      const line = [r.name, r.phone, r.type, time]
+        .map(f => `"${f}"`)
+        .join(",");
+      csv += line + "\n";
     });
 
-    // 다운로드 트리거
+    // BOM + Blob
     const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
