@@ -1,30 +1,37 @@
 /* RESET */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans KR',sans-serif; background:#fff; }
+body { font-family:'Noto Sans KR',sans-serif; }
 
 /* CONTAINER */
 .container { width:90%; max-width:1200px; margin:0 auto; }
 
 /* HERO TITLE */
 .hero-title {
-  background:#002d72; color:#fff; text-align:center; padding:80px 0;
+  background:#002d72; color:#fff;
+  text-align:center; padding:80px 0;
 }
 .hero-title h1 { font-size:48px; font-weight:700; }
 .hero-title .subtitle {
-  display:inline-block; background:#fff; color:#002d72;
+  display:inline-block;
+  background:#fff; color:#002d72;
   padding:6px 16px; margin-top:12px; font-size:24px;
   border-radius:4px;
 }
 
-/* SLIDER */
-.slider-section { overflow:hidden; }
+/* CONTINUOUS SLIDER */
+.slider-section {
+  overflow:hidden;
+  background:#002d72;
+  padding:40px 0;
+}
 .slider-wrapper {
+  width:100%;
   overflow:hidden;
 }
 .slider-track {
   display:flex;
-  width:max-content;
-  animation:scroll 26s linear infinite;
+  /* 무한 연속 스크롤 (한 사이클에 26개 아이템 전체 너비만큼 이동) */
+  animation: scroll 26s linear infinite;
 }
 .slide {
   flex:0 0 180px;
@@ -32,6 +39,11 @@ body { font-family:'Noto Sans KR',sans-serif; background:#fff; }
 }
 .slide img {
   width:100%; display:block; border-radius:8px;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-1 * (180px + 20px) * 13)); }
 }
 
 /* continuous scroll */
