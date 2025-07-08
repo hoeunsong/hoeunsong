@@ -5,21 +5,9 @@ document.getElementById("consult-form").addEventListener("submit", function (e) 
   const phone = document.getElementById("phone").value;
   const type = document.getElementById("type").value;
 
-  fetch("https://script.google.com/macros/s/여기_your_script_ID/exec", {
-    method: "POST",
-    body: JSON.stringify({ name, phone, type }),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      window.location.href = "thankyou.html";
-    } else {
-      alert("제출 실패");
-    }
-  })
-  .catch(error => {
-    alert("에러 발생: " + error);
-  });
+  const consults = JSON.parse(localStorage.getItem("consults")) || [];
+  consults.push({ name, phone, type });
+  localStorage.setItem("consults", JSON.stringify(consults));
+
+  window.location.href = "thankyou.html";
 });
