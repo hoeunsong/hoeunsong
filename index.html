@@ -3,65 +3,71 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>보험사별 보험서비스 견적 비교</title>
+  <title>Life Insurance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- AUTO-SLIDER -->
-  <section class="compare-slider">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Life Insurance</h1>
+      <nav>
+        <a href="#about">회사소개</a>
+        <a href="#services">서비스</a>
+        <a href="#form">상담신청</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h2>보험사별 보험서비스</h2>
+      <p>견적을 간편하게 비교해요</p>
+    </div>
+  </section>
+
+  <!-- INFINITE SLIDER -->
+  <section class="slider-section">
     <button class="arrow prev">‹</button>
-    <div class="slider-wrapper">
-      <div class="slider-track">
-        <!-- 원본 13장 -->
-        <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
-        <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
-        <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
-        <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
-        <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
-        <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
-        <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
-        <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
-        <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
-        <div class="slide"><img src="slide10.png" alt="배너10"/></div>
-        <div class="slide"><img src="slide11.png" alt="배너11"/></div>
-        <div class="slide"><img src="slide12.png" alt="배너12"/></div>
-        <div class="slide"><img src="slide13.png" alt="배너13"/></div>
+    <div class="slider">
+      <div class="track">
+        <!-- slide1.png ~ slide13.png (원본) -->
+        <div class="item"><img src="slide1.png"  alt="배너1"/></div>
+        <!-- ... -->
+        <div class="item"><img src="slide13.png" alt="배너13"/></div>
         <!-- 반복 13장 -->
-        <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
-        <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
-        <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
-        <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
-        <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
-        <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
-        <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
-        <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
-        <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
-        <div class="slide"><img src="slide10.png" alt="배너10"/></div>
-        <div class="slide"><img src="slide11.png" alt="배너11"/></div>
-        <div class="slide"><img src="slide12.png" alt="배너12"/></div>
-        <div class="slide"><img src="slide13.png" alt="배너13"/></div>
+        <div class="item"><img src="slide1.png"  alt="배너1"/></div>
+        <!-- ... -->
+        <div class="item"><img src="slide13.png" alt="배너13"/></div>
       </div>
     </div>
     <button class="arrow next">›</button>
   </section>
 
-  <!-- CTA BUTTON -->
+  <!-- CTA -->
   <section class="cta">
     <a href="#form">보험사별 보험 간편 견적비교 →</a>
   </section>
 
+  <!-- LOGO GRID -->
+  <section id="services" class="logo-grid">
+    <img src="logo-grid.png" alt="국내 32개 공식인증 보험사 리스트"/>
+  </section>
+
   <!-- FORM -->
-  <section id="form" class="inquiry-form">
+  <section id="form" class="form-section">
     <div class="container">
-      <h2>간편 상담 신청</h2>
+      <h3>빠른 상담 신청</h3>
       <form id="consult-form">
-        <input type="text"  id="name" name="name"   placeholder="이름" required/>
-        <input type="tel"   id="phone1"             placeholder="010"  required/>
+        <input type="text"  id="name"   name="name"   placeholder="이름" required/>
+        <input type="tel"   id="phone1" name="phone1" placeholder="010"  required/>
         <span class="dash">–</span>
-        <input type="tel"   id="phone2"             placeholder="1234" required/>
+        <input type="tel"   id="phone2" name="phone2" placeholder="1234" required/>
         <span class="dash">–</span>
-        <input type="tel"   id="phone3"             placeholder="5678" required/>
+        <input type="tel"   id="phone3" name="phone3" placeholder="5678" required/>
         <select id="type" name="type" required>
           <option value="">문의가 필요한 보험 유형</option>
           <option>건강보험</option>
