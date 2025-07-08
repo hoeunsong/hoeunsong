@@ -1,115 +1,110 @@
-/* 기본 리셋 */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Noto Sans KR', sans-serif; }
+/* 공통 */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
+.container { width:90%; max-width:1200px; margin:0 auto; }
 
-/* 컨테이너 너비 */
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-
-/* 히어로 타이틀 */
-.hero-title {
-  background-color: #002d72;
-  color: #fff;
-  text-align: center;
-  padding: 60px 0;
+/* 히어로 */
+.compare-hero {
+  background:#0033a0;
+  color:#fff;
+  text-align:center;
+  padding:60px 0;
 }
-.hero-title h1 { font-size: 32px; margin-bottom: 12px; }
-.hero-title p { font-size: 18px; }
+.compare-hero h1 { font-size:36px; font-weight:700; }
+.compare-hero p  { font-size:18px; margin-top:12px; }
 
-/* 슬라이더 섹션 */
+/* 슬라이더 */
 .compare-slider {
-  background-color: #002d72;
-  padding: 40px 0;
+  position:relative;
+  background:#0033a0;
+  padding:40px 0 80px;
 }
-.slider-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-.slider {
-  display: flex;
-  transition: transform 0.4s ease;
+.slider-track {
+  display:flex;
+  overflow:hidden;
+  scroll-behavior:smooth;
 }
 .slide {
-  min-width: 200px;
-  background: #fff;
-  border-radius: 8px;
-  text-align: center;
-  margin: 0 10px;
-  padding: 20px 10px;
+  flex:0 0 200px;
+  background:#fff;
+  border-radius:8px;
+  text-align:center;
+  padding:20px 10px;
+  margin:0 10px;
 }
-.slide img { max-width: 100px; margin-bottom: 12px; }
-.price-input {
-  margin-top: 8px;
+.slide img {
+  width:120px;
+  height:auto;
+  margin-bottom:12px;
 }
-.price-input label { display: block; font-size: 14px; margin-bottom: 4px; }
-.price-input input {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.slide input {
+  width:100%;
+  padding:8px;
+  font-size:14px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  text-align:center;
 }
 
-/* 슬라이더 버튼 */
-.slider-btn {
-  position: absolute;
-  top: 50%; transform: translateY(-50%);
-  background: rgba(0,0,0,0.3);
-  border: none; color: #fff;
-  font-size: 24px;
-  width: 32px; height: 64px;
-  cursor: pointer;
-  z-index: 10;
+/* 화살표 */
+.arrow {
+  position:absolute;
+  top:50%; transform:translateY(-50%);
+  width:40px; height:80px;
+  background:rgba(0,0,0,0.3);
+  color:#fff; border:none;
+  font-size:36px; cursor:pointer;
+  z-index:10;
 }
-.prev { left: 0; }
-.next { right: 0; }
+.prev { left:0; }
+.next { right:0; }
 
-/* CTA 버튼 */
-.compare-cta {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #00aaff;
-  color: #fff;
-  border-radius: 24px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
+/* 비교 버튼 */
+.btn-compare {
+  display:inline-block;
+  margin-top:24px;
+  padding:12px 24px;
+  background:#00aaff;
+  color:#fff; text-decoration:none;
+  font-weight:700;
+  border-radius:24px;
+  transition:background .3s;
 }
-.compare-cta:hover { background-color: #008ecc; }
+.btn-compare:hover { background:#008ecc; }
 
-/* 문의 폼 */
-.inquiry-form { padding: 60px 0; }
-.inquiry-form h2 {
-  text-align: center;
-  margin-bottom: 24px;
-  font-size: 28px;
+/* 상담 폼 */
+.inquiry {
+  padding:60px 0;
+  text-align:center;
 }
-.form-group { margin-bottom: 16px; }
-.form-group label { display: block; margin-bottom: 6px; }
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.inquiry h2 {
+  font-size:28px; margin-bottom:24px;
 }
-.submit-btn {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  background-color: #0033a0;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
+#consult-form {
+  display:inline-flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
-.submit-btn:hover { background-color: #002274; }
-
-/* 푸터 */
-.footer {
-  background-color: #f1f1f1;
-  padding: 20px 0;
-  text-align: center;
+#consult-form label {
+  flex:1 1 200px;
 }
-.footer p { font-size: 14px; color: #555; }
+#consult-form input,
+#consult-form select {
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+.btn-submit {
+  flex:1 1 120px;
+  padding:12px;
+  background:#0033a0;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .3s;
+}
+.btn-submit:hover { background:#002274; }
