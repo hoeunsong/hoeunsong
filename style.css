@@ -6,21 +6,30 @@ body { font-family:'Noto Sans KR',sans-serif; }
 .container { width:90%; max-width:1200px; margin:0 auto; }
 
 /* HERO TITLE */
+/* HERO TITLE */
 .hero-title {
-  background:#002d72;
-  color:#fff;
-  text-align:center;
-  padding:80px 0;
+  background-color: #002d72;  /* 짙은 파란 배경 */
+  color: #ffffff;             /* 흰 글자 */
+  text-align: center;
+  padding: 80px 0;
 }
-.hero-title h1 { font-size:48px; font-weight:700; }
+.hero-title .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-title h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
 .hero-title .subtitle {
-  display:inline-block;
-  background:#fff;
-  color:#002d72;
-  padding:6px 16px;
-  margin-top:12px;
-  font-size:24px;
-  border-radius:4px;
+  display: inline-block;
+  background-color: #ffffff;  /* 흰 박스 */
+  color: #002d72;             /* 파랑 글씨 */
+  padding: 6px 16px;
+  font-size: 24px;
+  border-radius: 4px;
 }
 
 /* SLIDER */
