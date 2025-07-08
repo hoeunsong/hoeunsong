@@ -26,3 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = 'thankyou.html';
   });
 });
+// ► 비교 슬라이더 기능
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.compare-section .slider');
+  const prevBtn = document.querySelector('.compare-section .prev');
+  const nextBtn = document.querySelector('.compare-section .next');
+  const slideCount = slider.children.length;
+  const slideWidth = slider.children[0].getBoundingClientRect().width + 16; // margin 포함
+  let idx = 0;
+
+  prevBtn.addEventListener('click', () => {
+    idx = Math.max(idx - 1, 0);
+    slider.style.transform = `translateX(-${slideWidth * idx}px)`;
+  });
+  nextBtn.addEventListener('click', () => {
+    idx = Math.min(idx + 1, slideCount - 1);
+    slider.style.transform = `translateX(-${slideWidth * idx}px)`;
+  });
+});

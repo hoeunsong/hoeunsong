@@ -212,3 +212,73 @@ a {
     font-size: 1rem;
   }
 }
+/* ► 비교 슬라이더 섹션 */
+.compare-section {
+  background-color: #0033a0;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+.compare-section .subtitle {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #eef6ff;
+}
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.slider {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.slide {
+  min-width: 240px;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+.slide img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+.slide label {
+  display: block;
+  font-size: 14px;
+}
+.slide input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.slider-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0 12px;
+  user-select: none;
+}
+.compare-cta {
+  display: inline-block;
+  background-color: #00aaff;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.compare-cta:hover {
+  background-color: #0088cc;
+}
