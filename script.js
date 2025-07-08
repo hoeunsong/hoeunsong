@@ -1,18 +1,15 @@
-// 화살표 클릭 시 일시정지 후 스크롤
+// 슬라이더 버튼 제어 (자동 애니메이션은 CSS Keyframes)
+const track = document.querySelector('.track');
 document.querySelector('.prev').addEventListener('click', () => {
-  const track = document.querySelector('.track');
-  track.style.animationPlayState = 'paused';
-  track.scrollBy({ left: -200, behavior: 'smooth' });
+  track.scrollBy({ left: -190, behavior: 'smooth' });
 });
 document.querySelector('.next').addEventListener('click', () => {
-  const track = document.querySelector('.track');
-  track.style.animationPlayState = 'paused';
-  track.scrollBy({ left: 200, behavior: 'smooth' });
+  track.scrollBy({ left:  190, behavior: 'smooth' });
 });
 
-// 폼 제출 처리
-document.getElementById('consult-form').addEventListener('submit', function (e) {
+// 폼 제출 → thankyou.html
+document.getElementById('consult-form').addEventListener('submit', e => {
   e.preventDefault();
-  alert('상담 신청이 완료되었습니다!');
-  this.reset();
+  // (여기서 구글 시트 전송 로직 추가 가능)
+  window.location.href = 'thankyou.html';
 });
