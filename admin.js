@@ -1,9 +1,8 @@
-// 1) 로컬스토리지(또는 Google Sheets 연동)에서 데이터 불러오기
-// 여기서는 localStorage.getItem('consults') 로 예시
+// 1) 로컬스토리지에서 데이터 가져오기
 const data = JSON.parse(localStorage.getItem('consults') || '[]');
 const tbody = document.querySelector('#consult-table tbody');
 
-// 2) 테이블에 행 추가
+// 2) 테이블에 행 렌더링
 data.forEach(item => {
   const tr = document.createElement('tr');
   tr.innerHTML = `
@@ -15,7 +14,7 @@ data.forEach(item => {
   tbody.appendChild(tr);
 });
 
-// 3) CSV 다운로드
+// 3) CSV 다운로드 핸들러
 document.getElementById('downloadBtn').addEventListener('click', () => {
   if (data.length === 0) {
     alert('저장된 신청 내역이 없습니다.');

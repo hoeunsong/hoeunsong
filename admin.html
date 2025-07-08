@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- 제목 -->
+  <!-- HERO TITLE 재사용 -->
   <section class="hero-title">
     <div class="container">
       <h1>상담 신청 관리</h1>
-      <div class="subtitle">신청 내역을 확인하고 엑셀로 다운로드할 수 있습니다.</div>
+      <div class="subtitle">신청 내역을 확인하고 CSV로 다운로드할 수 있습니다.</div>
     </div>
   </section>
 
@@ -22,7 +22,12 @@
     <div class="container">
       <table id="consult-table">
         <thead>
-          <tr><th>이름</th><th>연락처</th><th>보험유형</th><th>신청시간</th></tr>
+          <tr>
+            <th>이름</th>
+            <th>연락처</th>
+            <th>보험유형</th>
+            <th>신청시간</th>
+          </tr>
         </thead>
         <tbody></tbody>
       </table>
