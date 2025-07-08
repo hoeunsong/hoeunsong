@@ -3,121 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Life Insurance</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <title>보험사별 보험서비스 견적 비교</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <h1 class="logo">Life Insurance</h1>
-      <nav class="nav">
-        <a href="#about">회사소개</a>
-        <a href="#services">서비스</a>
-        <a href="#form">상담신청</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="container hero-content">
-      <h2>당신의 미래를 위한 현명한 선택</h2>
-      <p>지금, 맞춤 보험 상담을 무료로 받아보세요</p>
-      <a href="#form" class="cta-button">무료 상담 신청하기</a>
+  <!-- HERO TITLE -->
+  <section class="hero-title">
+    <div class="container">
+      <h1>보험사별 보험서비스</h1>
+      <p>견적을 간편하게 비교해요</p>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="info-section">
+  <!-- SLIDER -->
+  <section class="compare-slider">
     <div class="container">
-      <h3>왜 Life Insurance인가?</h3>
-      <p>맞춤형 상품 추천과 전문 컨설턴트의 1:1 상담으로<br>
-         당신에게 최적화된 보험 솔루션을 제공합니다.</p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="services-section">
-    <div class="container">
-      <h3>주요 서비스</h3>
-      <div class="services-grid">
-        <div class="service-item">
-          <img src="icon1.png" alt="안심 보장" />
-          <h4>안심 보장</h4>
-          <p>위험 상황을 대비한 최고의 보장 플랜 제공</p>
-        </div>
-        <div class="service-item">
-          <img src="icon2.png" alt="전문 컨설팅" />
-          <h4>전문 컨설팅</h4>
-          <p>경력 컨설턴트의 맞춤형 상담 지원</p>
-        </div>
-        <div class="service-item">
-          <img src="icon3.png" alt="간편 신청" />
-          <h4>간편 신청</h4>
-          <p>빠르고 쉬운 온라인 신청 시스템</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARE SLIDER -->
-  <section id="compare" class="compare-section">
-    <div class="container">
-      <h3>보험사별 보험서비스</h3>
-      <p class="subtitle">견적을 간편하게 비교해요</p>
-
       <div class="slider-wrapper">
         <button class="slider-btn prev">‹</button>
         <div class="slider">
           <div class="slide">
             <img src="hyundai.png" alt="현대해상" />
-            <label>보험료 <input type="number" placeholder="0원" /></label>
+            <div class="price-input">
+              <label>보험료</label>
+              <input type="text" placeholder="원" />
+            </div>
           </div>
           <div class="slide">
             <img src="meritz.png" alt="메리츠화재" />
-            <label>보험료 <input type="number" placeholder="0원" /></label>
+            <div class="price-input">
+              <label>보험료</label>
+              <input type="text" placeholder="원" />
+            </div>
           </div>
           <div class="slide">
             <img src="kb.png" alt="KB손해보험" />
-            <label>보험료 <input type="number" placeholder="0원" /></label>
+            <div class="price-input">
+              <label>보험료</label>
+              <input type="text" placeholder="원" />
+            </div>
           </div>
           <div class="slide">
             <img src="samsung.png" alt="삼성화재" />
-            <label>보험료 <input type="number" placeholder="0원" /></label>
+            <div class="price-input">
+              <label>보험료</label>
+              <input type="text" placeholder="원" />
+            </div>
           </div>
         </div>
         <button class="slider-btn next">›</button>
       </div>
-
-      <a href="#form" class="cta-button compare-cta">보험사별 보험 간편 견적비교 →</a>
+      <a href="#form" class="compare-cta">보험사별 보험 간편 견적비교 →</a>
     </div>
   </section>
 
   <!-- FORM -->
-  <section id="form" class="form-section">
+  <section id="form" class="inquiry-form">
     <div class="container">
-      <h3>빠른 상담 신청</h3>
+      <h2>간편 상담 신청</h2>
       <form id="consult-form">
-        <label for="name">이름</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="phone">연락처</label>
-        <input type="tel" id="phone" name="phone" required />
-
-        <label for="type">보험유형</label>
-        <select id="type" name="type" required>
-          <option value="">선택하세요</option>
-          <option value="건강보험">건강보험</option>
-          <option value="치아보험">치아보험</option>
-          <option value="암보험">암보험</option>
-          <option value="운전자보험">운전자보험</option>
-        </select>
-
-        <button type="submit">상담 신청하기</button>
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="type">보험 유형</label>
+          <select id="type" name="type" required>
+            <option value="">선택하세요</option>
+            <option value="건강보험">건강보험</option>
+            <option value="치아보험">치아보험</option>
+            <option value="암보험">암보험</option>
+            <option value="운전자보험">운전자보험</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">상담 신청하기</button>
       </form>
     </div>
   </section>
@@ -125,7 +88,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Life Insurance. All Rights Reserved.</p>
+      <p>&copy; 2025 Your Company. All Rights Reserved.</p>
     </div>
   </footer>
 </body>

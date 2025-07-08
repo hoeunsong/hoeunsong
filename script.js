@@ -1,46 +1,26 @@
-// script.js
-
-// 폼 제출 시 localStorage에 저장 후 thankyou.html로 이동
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById('consult-form');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name  = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const type  = document.getElementById('type').value;
-
-    if (!name || !phone || !type) {
-      alert('모든 항목을 입력해 주세요.');
-      return;
-    }
-
-    // 기존 데이터 로드
-    const consults = JSON.parse(localStorage.getItem('consults') || '[]');
-    // 새 데이터 추가
-    consults.push({ name, phone, type, date: new Date().toLocaleString() });
-    // 저장
-    localStorage.setItem('consults', JSON.stringify(consults));
-
-    // 완료 페이지로 이동
-    window.location.href = 'thankyou.html';
-  });
-});
-// ► 비교 슬라이더 기능
 document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.compare-section .slider');
-  const prevBtn = document.querySelector('.compare-section .prev');
-  const nextBtn = document.querySelector('.compare-section .next');
-  const slideCount = slider.children.length;
-  const slideWidth = slider.children[0].getBoundingClientRect().width + 16; // margin 포함
-  let idx = 0;
+  // 슬라이더 초기화
+  const slider = document.querySelector('.slider');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  const slides = Array.from(slider.children);
+  const slideWidth = slides[0].getBoundingClientRect().width + 20; // margin 포함
+  let index = 0;
 
-  prevBtn.addEventListener('click', () => {
-    idx = Math.max(idx - 1, 0);
-    slider.style.transform = `translateX(-${slideWidth * idx}px)`;
+  prev.addEventListener('click', () => {
+    index = Math.max(index - 1, 0);
+    slider.style.transform = `translateX(-${slideWidth * index}px)`;
   });
-  nextBtn.addEventListener('click', () => {
-    idx = Math.min(idx + 1, slideCount - 1);
-    slider.style.transform = `translateX(-${slideWidth * idx}px)`;
+  next.addEventListener('click', () => {
+    index = Math.min(index + 1, slides.length - 1);
+    slider.style.transform = `translateX(-${slideWidth * index}px)`;
+  });
+
+  // 폼 제출
+  document.getElementById('consult-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    // 여기에 실제 전송 로직 추가 또는 리디렉션
+    alert('상담 신청이 접수되었습니다!');
+    e.target.reset();
   });
 });
