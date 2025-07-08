@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>관리자 페이지 - 상담 내역</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>관리자 페이지</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+        rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
-    <h1>📋 상담 신청 내역</h1>
-    <table id="consult-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>연락처</th>
-          <th>보험유형</th>
-          <th>신청일시</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <button id="downloadBtn" class="cta-button">엑셀로 다운로드</button>
-  </div>
+  <!-- 제목 -->
+  <section class="hero-title">
+    <div class="container">
+      <h1>상담 신청 관리</h1>
+      <div class="subtitle">신청 내역을 확인하고 엑셀로 다운로드할 수 있습니다.</div>
+    </div>
+  </section>
+
+  <!-- 테이블 & 다운로드 버튼 -->
+  <section class="form-section">
+    <div class="container">
+      <table id="consult-table">
+        <thead>
+          <tr><th>이름</th><th>연락처</th><th>보험유형</th><th>신청시간</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="downloadBtn" class="submit-btn">CSV로 다운로드</button>
+    </div>
+  </section>
+
   <script src="admin.js"></script>
 </body>
 </html>

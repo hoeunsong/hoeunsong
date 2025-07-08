@@ -1,42 +1,43 @@
-// admin.js
+// 1) 로컬스토리지(또는 Google Sheets 연동)에서 데이터 불러오기
+// 여기서는 localStorage.getItem('consults') 로 예시
+const data = JSON.parse(localStorage.getItem('consults') || '[]');
+const tbody = document.querySelector('#consult-table tbody');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const tableBody = document.querySelector("#consult-table tbody");
-  const downloadBtn = document.getElementById("downloadBtn");
+// 2) 테이블에 행 추가
+data.forEach(item => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>${item.name}</td>
+    <td>${item.phone}</td>
+    <td>${item.type}</td>
+    <td>${new Date(item.timestamp).toLocaleString()}</td>
+  `;
+  tbody.appendChild(tr);
+});
 
-  // 로컬스토리지에서 데이터 불러오기
-  const consults = JSON.parse(localStorage.getItem("consults") || "[]");
+// 3) CSV 다운로드
+document.getElementById('downloadBtn').addEventListener('click', () => {
+  if (data.length === 0) {
+    alert('저장된 신청 내역이 없습니다.');
+    return;
+  }
 
-  // 테이블에 데이터 표시
-  consults.forEach(item => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${item.name}</td>
-      <td>${item.phone}</td>
-      <td>${item.type}</td>
-      <td>${item.date}</td>
-    `;
-    tableBody.appendChild(tr);
-  });
+  const header = ['이름','연락처','보험유형','신청시간'];
+  const rows = data.map(item => [
+    item.name,
+    item.phone,
+    item.type,
+    new Date(item.timestamp).toISOString()
+  ]);
 
-  // 엑셀(CSV) 다운로드
-  downloadBtn.addEventListener("click", () => {
-    const header = ["이름", "연락처", "보험유형", "신청일시"];
-    const rows = consults.map(item => [
-      `"${item.name}"`,
-      `"=${item.phone}"`,
-      `"${item.type}"`,
-      `"${item.date}"`
-    ]);
+  let csv = header.join(',') + '\n';
+  rows.forEach(r => { csv += r.map(f => `"${f}"`).join(',') + '\n'; });
 
-    const csvContent = [header.join(","), ...rows.map(r => r.join(","))].join("\n");
-    const bom = "\uFEFF";
-    const blob = new Blob([bom + csvContent], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "상담신청내역.csv";
-    a.click();
-    URL.revokeObjectURL(url);
-  });
+  const blob = new Blob([`\uFEFF${csv}`], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = '상담신청내역.csv';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 });
