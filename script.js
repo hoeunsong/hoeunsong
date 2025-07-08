@@ -1,28 +1,22 @@
-// script.js
-console.log("✅ script.js 로딩됨");
-
-document.getElementById("consult-form").addEventListener("submit", function (e) {
+document.getElementById('consult-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  console.log("✅ 폼 제출 감지됨");
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const type = document.getElementById("type").value;
+  const name  = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const type  = document.getElementById('type').value;
 
-  // 기존 데이터 가져오기
-  const consults = JSON.parse(localStorage.getItem("consults") || "[]");
-
-  // 새 항목 추가 (timestamp 포함)
-  consults.push({
-    name,
-    phone,
-    type,
-    timestamp: Date.now()
-  });
-
-  // 로컬스토리지에 저장
-  localStorage.setItem("consults", JSON.stringify(consults));
-
-  // 땡큐 페이지로 이동
-  window.location.href = "thankyou.html";
+  fetch('https://script.google.com/macros/s/AKfycbzea5M4Pm05apWhpPLW-y5ZbeSoEWlhYR1jTjAKdAqewcev-XC2cb1kHCjDXCTjHc56pQ/exec', {
+    method: 'POST',
+    contentType: 'application/json',
+    body: JSON.stringify({ name, phone, type })
+  })
+  .then(res => res.json())
+  .then(json => {
+    if (json.status === 'success') {
+      window.location.href = 'thankyou.html';
+    } else {
+      alert('제출 실패: ' + json.message);
+    }
+  })
+  .catch(err => alert('통신 에러: ' + err));
 });
