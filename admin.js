@@ -1,30 +1,42 @@
-document.getElementById('downloadBtn').addEventListener('click', function () {
-  const data = JSON.parse(localStorage.getItem('consults') || '[]');
-  if (data.length === 0) {
-    alert('저장된 상담 신청 내역이 없습니다.');
-    return;
-  }
+// admin.js
 
-  const header = ['이름', '연락처', '보험유형'];
-  const rows = data.map(item => [
-    item.name,
-    `="${item.phone}"`, // 전화번호는 지수표기 방지
-    item.type
-  ]);
+document.addEventListener("DOMContentLoaded", () => {
+  const tableBody = document.querySelector("#consult-table tbody");
+  const downloadBtn = document.getElementById("downloadBtn");
 
-  let csvContent = '';
-  csvContent += header.join(',') + '\n';
-  rows.forEach(row => {
-    csvContent += row.map(field => `"${field}"`).join(',') + '\n';
+  // 로컬스토리지에서 데이터 불러오기
+  const consults = JSON.parse(localStorage.getItem("consults") || "[]");
+
+  // 테이블에 데이터 표시
+  consults.forEach(item => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.name}</td>
+      <td>${item.phone}</td>
+      <td>${item.type}</td>
+      <td>${item.date}</td>
+    `;
+    tableBody.appendChild(tr);
   });
 
-  const BOM = '\uFEFF';
-  const blob = new Blob([BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
+  // 엑셀(CSV) 다운로드
+  downloadBtn.addEventListener("click", () => {
+    const header = ["이름", "연락처", "보험유형", "신청일시"];
+    const rows = consults.map(item => [
+      `"${item.name}"`,
+      `"=${item.phone}"`,
+      `"${item.type}"`,
+      `"${item.date}"`
+    ]);
 
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = '상담신청내역.csv';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+    const csvContent = [header.join(","), ...rows.map(r => r.join(","))].join("\n");
+    const bom = "\uFEFF";
+    const blob = new Blob([bom + csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "상담신청내역.csv";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
 });
