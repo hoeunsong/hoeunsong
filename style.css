@@ -12,7 +12,8 @@ body { font-family:'Noto Sans KR',sans-serif; background:#fff; }
 }
 .hero-title h1 { font-size:48px; font-weight:700; }
 .hero-title .subtitle {
-  display:inline-block; background:#fff; color:#002d72;
+  display:inline-block;
+  background:#fff; color:#002d72;
   padding:6px 16px; margin-top:12px; font-size:24px;
   border-radius:4px;
 }
@@ -40,7 +41,8 @@ body { font-family:'Noto Sans KR',sans-serif; background:#fff; }
 
 /* CTA */
 .cta-section {
-  text-align:center; padding:40px 0; background:#002d72; color:#fff;
+  text-align:center; padding:40px 0;
+  background:#002d72; color:#fff;
 }
 .cta-btn {
   display:inline-block; background:#00c8ff; color:#fff;
@@ -56,6 +58,45 @@ body { font-family:'Noto Sans KR',sans-serif; background:#fff; }
   background:#f7f7f7; padding:40px 0; text-align:center;
 }
 .logo-section img { max-width:100%; }
+
+/* ABOUT */
+.about-section {
+  background:#fff; padding:60px 0; text-align:center;
+}
+.about-section h2 {
+  font-size:28px; color:#002d72; margin-bottom:16px; font-weight:700;
+}
+.about-section p {
+  font-size:16px; color:#555; line-height:1.6;
+}
+
+/* SERVICES */
+.services-section {
+  background:#f9f9f9; padding:60px 0;
+}
+.services-section h2 {
+  text-align:center; font-size:28px; color:#002d72;
+  margin-bottom:40px; font-weight:700;
+}
+.services-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+}
+.service-item {
+  background:#fff; padding:24px; border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  text-align:center;
+}
+.service-item img {
+  width:64px; height:64px; margin-bottom:16px;
+}
+.service-item h3 {
+  font-size:18px; color:#002d72; margin-bottom:8px; font-weight:600;
+}
+.service-item p {
+  font-size:14px; color:#555; line-height:1.4;
+}
 
 /* FORM */
 .form-section {
