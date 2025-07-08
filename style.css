@@ -128,3 +128,19 @@ form { max-width:800px; margin:0 auto; }
   transition:background .3s;
 }
 .submit-btn:hover { background:#001f5c; }
+/* FOOTER */
+.footer-section {
+  background: #002d72;
+  color: #cfd8dc;
+  padding: 40px 0;
+  text-align: center;
+}
+.footer-text {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.footer-small {
+  font-size: 12px;
+  color: #90a4ae;
+}
