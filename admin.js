@@ -1,27 +1,27 @@
-// admin.js
-console.log("✅ admin.js 로딩됨");
+document.getElementById('downloadBtn').addEventListener('click', function () {
+  const data = JSON.parse(localStorage.getItem('consults') || '[]');
+  if (data.length === 0) {
+    alert('저장된 상담 신청 내역이 없습니다.');
+    return;
+  }
 
-const tableBody = document.querySelector("#consult-table tbody");
-const data = JSON.parse(localStorage.getItem("consults") || "[]");
-console.log("localStorage에 저장된 consults:", data);
+  const header = ['이름', '연락처', '보험유형'];
+  const rows = data.map(item => [item.name, item.phone, item.type]);
 
-data.forEach(entry => {
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
-    <td>${entry.name}</td>
-    <td>${entry.phone}</td>
-    <td>${entry.type}</td>
-  `;
-  tableBody.appendChild(tr);
-});
+  let csvContent = '';
+  csvContent += header.join(',') + '\n';
+  rows.forEach(row => {
+    csvContent += row.map(field => `"${field}"`).join(',') + '\n';
+  });
 
-document.getElementById("downloadBtn").addEventListener("click", () => {
-  const header = ["이름", "연락처", "보험유형"];
-  const rows = data.map(e => [e.name, e.phone, e.type]);
-  const csv = [header, ...rows].map(r => r.join(",")).join("\\n");
-  const blob = new Blob(["\\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
-  const link = document.createElement("a");
+  // BOM 추가
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
+
+  const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = "상담신청내역.csv";
+  link.download = '상담신청내역.csv';
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 });
