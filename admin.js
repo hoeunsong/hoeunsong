@@ -1,13 +1,13 @@
 // admin.js
 document.addEventListener("DOMContentLoaded", () => {
   const tbody = document.querySelector("#consult-table tbody");
-  const data  = JSON.parse(localStorage.getItem("consults") || "[]");
+  const initialData = JSON.parse(localStorage.getItem("consults") || "[]");
 
   // 테이블 채우기
-  if (data.length === 0) {
+  if (initialData.length === 0) {
     tbody.innerHTML = `<tr><td colspan="4">신청 내역이 없습니다.</td></tr>`;
   } else {
-    data.forEach(item => {
+    initialData.forEach(item => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${item.name}</td>
@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 다운로드 버튼 핸들러
-  const btn = document.getElementById("downloadBtn");
-  btn.addEventListener("click", () => {
+  document.getElementById("downloadBtn").addEventListener("click", () => {
+    // 클릭 시 최신 데이터 로드
+    const data = JSON.parse(localStorage.getItem("consults") || "[]");
     if (data.length === 0) {
       return alert("저장된 신청 내역이 없습니다.");
     }
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       csv += row.map(f => `"${f}"`).join(",") + "\n";
     });
 
-    // 다운로드
+    // 다운로드 트리거
     const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
