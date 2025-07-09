@@ -58,3 +58,10 @@ document.getElementById("consult-form").addEventListener("submit", function(e) {
 
   window.location.href = "thankyou.html";
 });
+console.log("✅ script.js 로딩됨");
+
+document.getElementById("consult-form").addEventListener("submit", function(e) {
+  console.log("✅ 폼 제출! Formspree로 보내는 중...");
+  // Formspree는 form 자체가 action/post 처리하므로 JS로 추가 작업은 없습니다.
+  // (단, 필요 시 여기서 추가 유효성 검사나 로딩 UI 삽입 가능)
+});
