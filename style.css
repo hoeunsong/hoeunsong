@@ -124,3 +124,17 @@ form { max-width:800px; margin:0 auto; }
     display: block;
   }
 }
+/* MOBILE: 보험사 리스트 이미지 가로폭 거의 풀사이즈로 늘리기 */
+@media (max-width: 768px) {
+  .logo-section .container img {
+    /* 화면 폭의 90% 만큼 넓히고 */
+    width: 90vw !important;
+    /* 세로 비율은 자동 유지 */
+    height: auto !important;
+    /* 좌우 중앙 정렬 */
+    margin: 0 auto !important;
+    display: block !important;
+    /* 기존 제한 해제 */
+    max-width: none !important;
+  }
+}
