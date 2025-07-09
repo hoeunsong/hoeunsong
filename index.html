@@ -104,34 +104,48 @@
   </section>
 
   <!-- FORM SECTION -->
-  <section id="form" class="form-section">
-    <div class="container">
-      <h3>빠른 상담 신청</h3>
-      <form id="consult-form">
-        <div class="row">
-          <input type="text"  id="name"   name="name"   placeholder="이름" required/>
-          <input type="tel"   id="phone1" name="phone1" placeholder="010"  required/>
-          <span class="dash">–</span>
-          <input type="tel"   id="phone2" name="phone2" placeholder="1234" required/>
-          <span class="dash">–</span>
-          <input type="tel"   id="phone3" name="phone3" placeholder="5678" required/>
-        </div>
-        <div class="row">
-          <select id="type" name="type" required>
-            <option value="">문의가 필요한 보험 유형</option>
-            <option>건강보험</option>
-            <option>치아보험</option>
-            <option>암보험</option>
-            <option>운전자보험</option>
-          </select>
-        </div>
-        <div class="row check-row">
-          <label><input type="checkbox" required/> 견적확인 (수집/제3자 제공)</label>
-          <label><input type="checkbox" required/> 개인정보 수집·이용 동의</label>
-          <label><input type="checkbox" required/> 개인정보 제3자 제공 동의</label>
-        </div>
-        <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
-      </form>
+  <form
+      id="consult-form"
+      action="https://formspree.io/f/mgyvjppa"
+      method="POST"
+      target="thankyouFrame"
+    >
+      <!-- 1. 이름 + 전화번호 세 칸 -->
+      <div class="row">
+        <input type="text"   name="name"   placeholder="이름" required />
+        <input type="tel"    name="phone1" placeholder="010"  required />
+        <span class="dash">–</span>
+        <input type="tel"    name="phone2" placeholder="1234" required />
+        <span class="dash">–</span>
+        <input type="tel"    name="phone3" placeholder="5678" required />
+      </div>
+
+      <!-- 2. 보험 유형 선택 -->
+      <div class="row">
+        <select name="type" required>
+          <option value="">문의가 필요한 보험 유형</option>
+          <option value="건강보험">건강보험</option>
+          <option value="치아보험">치아보험</option>
+          <option value="암보험">암보험</option>
+          <option value="운전자보험">운전자보험</option>
+        </select>
+      </div>
+
+      <!-- 3. 약관 동의 체크박스 -->
+      <div class="row check-row">
+        <label><input type="checkbox" name="agree1" required /> 견적확인 (수집/제3자 제공)</label>
+        <label><input type="checkbox" name="agree2" required /> 개인정보 수집·이용 동의</label>
+        <label><input type="checkbox" name="agree3" required /> 개인정보 제3자 제공 동의</label>
+      </div>
+
+      <!-- 4. 전송 버튼 -->
+      <button type="submit" class="submit-btn">
+        통합 견적비교 조회 →
+      </button>
+    </form>
+
+    <!-- 5. 폼 전송 후 thankyou.html을 로드할 숨은 iframe -->
+    <iframe name="thankyouFrame" style="display:none;"></iframe>
     </div>
   </section>
 
