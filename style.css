@@ -400,3 +400,48 @@ body {
     width: 100%;
   }
 }
+/* 기본 폼 스타일 (데스크탑) */
+.form-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 8px;
+}
+.form-section .form-row {
+  margin-bottom: 16px;
+}
+.form-section .form-row input,
+.form-section .form-row select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 모바일용 레이아웃 변경 */
+@media (max-width: 480px) {
+  .form-section .container {
+    padding: 20px;
+  }
+  /* 이름, 통신사, 연락처, 보험유형을 모두 한 줄로 보이도록 */
+  .form-section .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 폰 구간도 세 칸이 세로로 쌓이게 */
+  .form-row.phone-row {
+    flex-direction: column;
+  }
+  .form-row.phone-row .dash {
+    display: none;
+  }
+
+  /* 버튼 폰트 크기 조정 */
+  .submit-btn {
+    padding: 14px;
+    font-size: 18px;
+  }
+}
