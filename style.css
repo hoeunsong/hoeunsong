@@ -441,3 +441,53 @@ body { font-family:'Noto Sans KR',sans-serif; }
   border-radius: 4px;
   cursor: pointer;
 }
+/* form 섹션 공통 */
+.form-section .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* <-- 가운데(center) → 왼쪽(start) 정렬 */
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* 각 입력창 & 셀렉트 공통 */
+.form-row input,
+.form-row select {
+  flex: 0 0 180px;    /* 고정폭 180px */
+  padding: 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* 통신사 셀렉트만 조금 넓게 하고 싶다면 */
+.form-row select#carrier {
+  flex-basis: 200px;
+}
+
+/* 전화번호 칸(010 / 1234 / 5678)은 균일하게 */
+.phone-row input {
+  flex-basis: 120px;
+}
+
+/* 대시(–) 마진은 그대로 */
+.phone-row .dash {
+  align-self: center;
+  margin: 0 6px;
+}
+
+/* 제출 버튼 줄 */
+.submit-btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0.75em;
+  font-size: 1.1rem;
+  background: #002d72;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
