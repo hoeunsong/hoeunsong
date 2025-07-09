@@ -47,9 +47,8 @@ body {
 /* ───────────────────────────────────────────────────────────────────────── */
 /* SLIDER SECTION */
 .slider-section {
-  background: #002d72;
+  /* 이제 배경은 컨테이너 안으로 옮길 거라 섹션엔 위아래 패딩만 */
   padding: 60px 0 40px;
-  color: #fff;
 }
 .hero-title {
   text-align: center;
@@ -633,3 +632,30 @@ body {
     padding: 20px 10px;
   }
 }
+/* 내부 컨테이너에만 파란 배경을 주고, max-width:1200px 안에서만 보이도록 */
+.slider-section .container {
+  background: #002d72;
+  padding: 80px 0;       /* 위아래 여백 */
+  border-radius: 8px;    /* 모서리 둥글게 */
+  color: #fff;           /* 텍스트 흰색으로 유지 */
+  position: relative;    /* 절대위치 화살표 배치용 */
+  overflow: hidden;      /* 슬라이더가 튀어나오지 않도록 */
+}
+
+/* 화살표(prev/next)를 컨테이너 좌우에 붙이려면 */
+.slider-section .prev,
+.slider-section .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider-section .prev { left: 16px; }
+.slider-section .next { right: 16px; }
