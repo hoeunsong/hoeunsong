@@ -29,29 +29,29 @@
       <div class="slider-wrapper">
         <div class="slider-track">
           <!-- 원본 13장 -->
-          <div class="slide"><img src="slide1.png" alt="배너1"/></div>
-          <div class="slide"><img src="slide2.png" alt="배너2"/></div>
-          <div class="slide"><img src="slide3.png" alt="배너3"/></div>
-          <div class="slide"><img src="slide4.png" alt="배너4"/></div>
-          <div class="slide"><img src="slide5.png" alt="배너5"/></div>
-          <div class="slide"><img src="slide6.png" alt="배너6"/></div>
-          <div class="slide"><img src="slide7.png" alt="배너7"/></div>
-          <div class="slide"><img src="slide8.png" alt="배너8"/></div>
-          <div class="slide"><img src="slide9.png" alt="배너9"/></div>
+          <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
+          <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
+          <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
+          <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
+          <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
+          <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
+          <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
+          <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
+          <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
           <div class="slide"><img src="slide10.png" alt="배너10"/></div>
           <div class="slide"><img src="slide11.png" alt="배너11"/></div>
           <div class="slide"><img src="slide12.png" alt="배너12"/></div>
           <div class="slide"><img src="slide13.png" alt="배너13"/></div>
           <!-- 복제 13장 -->
-          <div class="slide"><img src="slide1.png" alt="배너1"/></div>
-          <div class="slide"><img src="slide2.png" alt="배너2"/></div>
-          <div class="slide"><img src="slide3.png" alt="배너3"/></div>
-          <div class="slide"><img src="slide4.png" alt="배너4"/></div>
-          <div class="slide"><img src="slide5.png" alt="배너5"/></div>
-          <div class="slide"><img src="slide6.png" alt="배너6"/></div>
-          <div class="slide"><img src="slide7.png" alt="배너7"/></div>
-          <div class="slide"><img src="slide8.png" alt="배너8"/></div>
-          <div class="slide"><img src="slide9.png" alt="배너9"/></div>
+          <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
+          <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
+          <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
+          <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
+          <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
+          <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
+          <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
+          <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
+          <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
           <div class="slide"><img src="slide10.png" alt="배너10"/></div>
           <div class="slide"><img src="slide11.png" alt="배너11"/></div>
           <div class="slide"><img src="slide12.png" alt="배너12"/></div>
@@ -74,65 +74,82 @@
 
   <!-- FORM SECTION -->
   <section id="form" class="form-section">
-    <div class="container">
-      <h3>빠른 상담 신청</h3>
+  <div class="container">
+    <h3>빠른 상담 신청</h3>
 
-      <form
-        id="consult-form"
-        action="https://formspree.io/f/mgyvjppa"
-        method="POST"
-        target="thankyouFrame"
-      >
-        <input type="hidden" name="_next" value="https://hoeunsong.github.io/hoeunsong/thankyou.html?language=ko"/>
-        <input type="hidden" name="_captcha" value="false"/>
+    <form id="consult-form">
+      <!-- 이름 -->
+      <div class="form-row">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="이름"
+          required
+        />
+      </div>
 
-        <!-- 이름 -->
-        <div class="form-row">
-          <input type="text" id="name" name="name" placeholder="이름" required/>
-        </div>
+      <!-- 연락처 -->
+       <div class="form-row">
+        <select id="carrier" name="carrier" required>
+          <option value="">통신사 선택</option>
+          <option value="LG">LG</option>
+          <option value="KT">KT</option>
+          <option value="SKT">SKT</option>
+        </select>
+      </div>
 
-        <!-- 통신사 선택 -->
-        <div class="form-row">
-          <select id="carrier" name="carrier" required>
-            <option value="">통신사 선택</option>
-            <option value="LG">LG</option>
-            <option value="KT">KT</option>
-            <option value="SKT">SKT</option>
-          </select>
-        </div>
+      <!-- 전화번호 3단계 -->
+      <div class="form-row phone-row">
+         <input
+          type="tel"
+          id="phone1"
+          name="phone1"
+          placeholder="010"
+          pattern="[0-9]{3}"
+          required
+        />
+        <span class="dash">–</span>
 
-        <!-- 전화번호 -->
-        <div class="form-row phone-row">
-          <input type="tel" id="phone1" name="phone1" placeholder="010" pattern="\d{3}" required/>
-          <span class="dash">–</span>
-          <input type="tel" id="phone2" name="phone2" placeholder="1234" pattern="\d{3,4}" required/>
-          <span class="dash">–</span>
-          <input type="tel" id="phone3" name="phone3" placeholder="5678" pattern="\d{4}" required/>
-        </div>
+        <!-- 중간 -->
+        <input
+          type="tel"
+          id="phone2"
+          name="phone2"
+          placeholder="1234"
+          pattern="[0-9]{3,4}"
+          required
+        />
+        <span class="dash">–</span>
 
-        <!-- 보험유형 -->
-        <div class="form-row">
-          <select id="type" name="type" required>
-            <option value="">문의가 필요한 보험 유형</option>
-            <option value="건강보험">건강보험</option>
-            <option value="치아보험">치아보험</option>
-            <option value="암보험">암보험</option>
-            <option value="운전자보험">운전자보험</option>
-            <option value="기타">기타</option>
-          </select>
-        </div>
+        <!-- 끝 -->
+        <input
+          type="tel"
+          id="phone3"
+          name="phone3"
+          placeholder="5678"
+          pattern="[0-9]{4}"
+          required
+        />
+      </div>
 
-        <!-- 동의 -->
-        <div class="form-row check-row">
-          <label><input type="checkbox" name="agree1" required/> 견적확인 (수집/제공)</label>
-          <label><input type="checkbox" name="agree2" required/> 개인정보 수집·이용 동의</label>
-          <label><input type="checkbox" name="agree3" required/> 개인정보 제3자 제공 동의</label>
-        </div>
+      <!-- 보험유형 -->
+      <div class="form-row">
+        <select id="type" name="type" required>
+          <option value="">문의가 필요한 보험 유형</option>
+          <option value="건강보험">건강보험</option>
+          <option value="치아보험">치아보험</option>
+          <option value="암보험">암보험</option>
+          <option value="운전자보험">운전자보험</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
 
-        <!-- 제출 -->
-        <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
-      </form>
-
+      <!-- 제출 버튼 -->
+      <button type="submit" class="submit-btn">
+        통합 견적비교 조회 →
+      </button>
+    </form>
       <iframe name="thankyouFrame" style="display:none;"></iframe>
     </div>
   </section>
@@ -141,11 +158,13 @@
   <footer class="footer-section">
     <div class="container">
       <p class="footer-text">
-        생명보험 | 종신보험 | 간병인보험 | 암보험<br/>
-        건강보험 | 태아보험 | 연금보험 등<br/>
+        생명보험 | 종신보험 | 간병인보험 | 암보험<br>
+        건강보험 | 태아보험 | 연금보험 등<br>
         국내 유명사 보험별 비교 견적을 통해 좋은 보험을 찾아 드립니다.
       </p>
-      <small class="footer-small">ⓒ 2025 Life Insurance. All Rights Reserved.</small>
+      <small class="footer-small">
+        ⓒ 2025 Life Insurance. All Rights Reserved.
+      </small>
     </div>
   </footer>
 </body>
