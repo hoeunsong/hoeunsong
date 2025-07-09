@@ -1,542 +1,149 @@
-/* RESET */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans KR',sans-serif; color:#222; }
+/* ───────────────────────────────────────────────────────────────────────── */
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  line-height: 1.4;
+}
 
+/* ───────────────────────────────────────────────────────────────────────── */
 /* CONTAINER */
-.container { width:90%; max-width:1200px; margin:0 auto; }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+/* ───────────────────────────────────────────────────────────────────────── */
 /* HEADER */
-.header { background:#fff; padding:20px 0; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
-.header-inner { display:flex; justify-content:space-between; align-items:center; }
-.logo { color:#002d72; font-size:24px; font-weight:700; }
-.nav a { color:#333; margin-left:20px; font-weight:500; }
+.header {
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: #002d72;
+  font-size: 24px;
+  font-weight: 700;
+}
+.nav a {
+  color: #333;
+  margin-left: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
 
+/* ───────────────────────────────────────────────────────────────────────── */
 /* SLIDER SECTION */
-.slider-section { background:#002d72; padding:60px 0; position:relative; overflow:hidden; }
-.hero-title { text-align:center; color:#fff; margin-bottom:40px; }
-.hero-title h2 { font-size:36px; font-weight:700; }
-.hero-title .sub { display:inline-block; background:#fff; color:#002d72; padding:4px 12px; margin-top:12px; border-radius:4px; font-size:20px; }
+.slider-section {
+  background: #002d72;
+  padding: 60px 0 40px;
+  color: #fff;
+}
+.hero-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.hero-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.hero-title .sub {
+  display: inline-block;
+  background: #fff;
+  color: #002d72;
+  padding: 6px 16px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 4px;
+}
 
-/* SLIDER */
-.slider-wrapper { overflow:hidden; }
+/* slider track */
+.slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+}
 .slider-track {
-  display:flex;
-  width:calc(26 * 200px); /* 26 slides * slide-width */
-  animation:scroll 26s linear infinite;
+  display: flex;
+  animation: scroll 13s linear infinite;
 }
-.slide {
-  flex: 0 0 200px;
-  margin-right:20px;
-}
-.slide img {
-  width:100%;
-  border-radius:8px;
-  display:block;
-}
-/* 스크롤 애니메이션 */
 @keyframes scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-/* CTA */
-.cta-wrapper { text-align:center; margin:40px 0 0; }
-.cta-btn {
-  display:inline-block;
-  background:#27c1ff;
-  color:#fff;
-  padding:18px 48px;
-  font-size:20px;
-  border-radius:30px;
-  text-decoration:none;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
-  transition:background .3s;
-}
-.cta-btn:hover { background:#1ba8d7; }
-.cta-text { color:#fff; margin-top:12px; }
-
-/* LOGO GRID */
-.logo-section { background:#f5f8fb; padding:60px 0; text-align:center; }
-.logo-section img { max-width:100%; }
-
-/* FORM SECTION */
-.form-section { padding:60px 0; }
-.form-section h3 { text-align:center; font-size:28px; margin-bottom:24px; }
-form { max-width:800px; margin:0 auto; }
-.row { display:flex; justify-content:center; align-items:center; margin-bottom:16px; }
-.row input, .row select {
-  flex:0 0 auto;
-  width:160px;
-  padding:10px;
-  margin-right:8px;
-  border:1px solid #ccc;
-  border-radius:4px;
-}
-.dash { font-size:24px; margin:0 4px; color:#555; }
-.check-row label { margin-right:20px; font-size:14px; }
-.submit-btn {
-  display:block;
-  width:100%;
-  background:#002d72;
-  color:#fff;
-  padding:16px;
-  font-size:18px;
-  border:none;
-  border-radius:4px;
-  cursor:pointer;
-  margin-top:24px;
-}
-.submit-btn:hover { background:#001f58; }
-
-/* FOOTER */
-.footer-section { background:#f5f8fb; padding:40px 0; text-align:center; }
-.footer-text { color:#555; line-height:1.6; margin-bottom:16px; }
-.footer-small { color:#aaa; font-size:12px; }
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero-title h2 { font-size:28px; }
-  .hero-title .sub { font-size:18px; }
-  .slider-track { animation-duration:20s; }
-  .slide { flex:0 0 140px; margin-right:12px; }
-  .row { flex-wrap:wrap; }
-  .row input, .row select { width:calc(33% - 12px); margin-bottom:12px; }
-  .dash { display:none; }
-}
-/*──────────────────────────────
-  MOBILE: 보험사 리스트 이미지 키우기
-──────────────────────────────*/
-@media (max-width: 768px) {
-  .logo-section .container img {
-    /* 기존보다 더 크게, 필요에 따라 px 조절 가능 */
-    height: 120px !important;
-    width: auto;
-    margin: 0 auto;
-    display: block;
-  }
-}
-/* MOBILE: 보험사 리스트 이미지 확대 */
-@media (max-width: 768px) {
-  .logo-section .container img {
-    width: 90% !important;  /* 가로폭의 90% */
-    height: auto !important; /* 비율 유지 */
-    margin: 0 auto;
-    display: block;
-  }
-}
-/* MOBILE: 보험사 리스트 이미지 가로폭 거의 풀사이즈로 늘리기 */
-@media (max-width: 768px) {
-  .logo-section .container img {
-    /* 화면 폭의 90% 만큼 넓히고 */
-    width: 90vw !important;
-    /* 세로 비율은 자동 유지 */
-    height: auto !important;
-    /* 좌우 중앙 정렬 */
-    margin: 0 auto !important;
-    display: block !important;
-    /* 기존 제한 해제 */
-    max-width: none !important;
-  }
-}
-/* MOBILE: insurer-list 이미지를 화면 폭 전체로 확장 */
-@media (max-width: 768px) {
-  /* 1) 컨테이너 좌우 패딩 제거 */
-  .logo-section .container {
-    padding: 0 !important;
-    margin: 0 -16px;         /* 기존 좌우 16px 패딩 보정 */
-    overflow: hidden;        /* 가로 스크롤 방지 */
-  }
-
-  /* 2) 이미지 폭 100% 고정 */
-  .logo-section .container img {
-    width: 100% !important;
-    max-width: none !important;
-    height: auto !important;
-    display: block;
-    margin: 0 auto;
-  }
-}
-/*───────────────────────────────────────
-  MOBILE: insurer-list 이미지를 화면 전체 폭으로, 수평 중앙 정렬
-────────────────────────────────────────*/
-@media (max-width: 768px) {
-  /* 컨테이너 padding/margin 초기화 */
-  .logo-section .container {
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden;
-  }
-
-  /* 이미지 폭을 100vw로, 중앙에 놓기 */
-  .logo-section .container img {
-    width: 100vw !important;
-    max-width: none !important;
-    height: auto !important;
-    display: block;
-    /* 좌우 차이를 보정해 중앙으로 이동 */
-    margin-left: calc((100% - 100vw) / 2) !important;
-  }
-}
-/*───────────────────────────────────────
-  MOBILE: 보험사 리스트 이미지를 폭 가득, 가운데 정렬
-────────────────────────────────────────*/
-@media (max-width: 768px) {
-  /* 1) 컨테이너를 브라우저가득 풀사이즈로 */
-  .logo-section .container {
-    width: 100vw !important;
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-  }
-
-  /* 2) 이미지도 100% 폭으로 */
-  .logo-section .container img {
-    width: 100% !important;
-    max-width: none !important;
-    height: auto !important;
-    display: block;
-  }
-}
-/* MOBILE: logo-section 위·아래 패딩 제거 */
-@media (max-width: 768px) {
-  .logo-section {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  .logo-section .container {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-}
-/* HERO TITLE SUBTITLE: 폰트 크기 & 박스 크기 확대 */
-.hero-title .subtitle {
-  font-size: 1.5rem !important;    /* 글자 크기 키우기 */
-  padding: 8px 24px !important;    /* 위아래 8px, 좌우 24px */
-  border-radius: 4px;              /* 모서리 둥글게 유지 */
-}
-/* style.css 맨 아래에 추가 */
-
-.hero-title .sub {
-  font-size: 1.5rem !important;   /* 데스크탑 기본 크기 */
-  padding: 8px 24px !important;   /* 박스 패딩 */
-}
-
-/* 모바일 (최대 768px) 에도 동일하게 적용 */
-@media (max-width: 768px) {
-  .hero-title .sub {
-    font-size: 1.2rem !important;
-    padding: 6px 16px !important;
-  }
-}
-/* style.css 맨 아래에 추가 */
-
-.hero-title .sub {
-  display: inline-block;           /* 배경이 텍스트 크기에 딱 맞게 */
-  font-size: 1.6rem !important;    /* 원하는 폰트 크기 */
-  font-weight: 700 !important;     /* 더 두껍게 */
-  color: #002d72 !important;       /* 파란색 텍스트 */
-  background-color: #ffffff !important; /* 흰 박스 배경 */
-  padding: 10px 28px !important;   /* 위아래 10px, 좌우 28px */
-  border-radius: 4px !important;   /* 모서리 둥글게 (선택) */
-}
-
-/* 모바일 조정 */
-@media (max-width: 768px) {
-  .hero-title .sub {
-    font-size: 1.3rem !important;
-    padding: 8px 20px !important;
-  }
-}
-/* style.css 맨 아래에 추가 */
-.form-row {
-  margin-bottom: 16px;
-}
-
-.form-row input,
-.form-row select {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ccd0d5;
-  border-radius: 4px;
-}
-
-.submit-btn {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  background: #002d72;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-/* 같은 줄에 4칸 배치 */
-.phone-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* 통신사 드롭다운과 모든 input 동등하게 flex:1 적용 */
-.phone-row select,
-.phone-row input {
-  flex: 1;
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ccd0d5;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-/* 구분자 대시 */
-.dash {
-  flex: 0;
-  font-size: 1.2rem;
-  color: #555;
-}
-/* RESET */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans KR',sans-serif; }
-
-/* CONTAINER */
-.container { width:90%; max-width:1200px; margin:0 auto; }
-
-/* HEADER */
-.header { background:#fff; padding:20px 0; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
-.header-inner { display:flex; justify-content:space-between; align-items:center; }
-.logo { color:#002d72; font-size:24px; font-weight:700; }
-.nav a { color:#333; margin-left:20px; font-weight:500; text-decoration:none; }
-
-/* SLIDER */
-.slider-section { background:#002d72; color:#fff; padding:60px 0; }
-.hero-title { text-align:center; margin-bottom:40px; }
-.hero-title h2 { font-size:36px; }
-.hero-title .sub { display:inline-block; background:#fff; color:#002d72; padding:6px 16px; margin-top:12px; font-size:24px; border-radius:4px; }
-
-.slider-wrapper { overflow:hidden; }
-.slider-track {
-  display:flex;
-  animation: scroll 13s linear infinite;
-}
-@keyframes scroll {
-  from { transform:translateX(0); }
-  to   { transform:translateX(-50%); }
-}
-.slide { flex:0 0 180px; margin:0 10px; }
-.slide img { width:100%; border-radius:8px; display:block; }
-
-/* CTA */
-.cta-wrapper { text-align:center; margin-top:40px; }
-.cta-btn {
-  display:inline-block;
-  background:#1ac9ff;
-  color:#fff;
-  padding:16px 40px;
-  border-radius:40px;
-  font-size:24px;
-  text-decoration:none;
-}
-.cta-text { margin-top:12px; color:#eee; }
-
-/* LOGO LIST */
-.logo-section { background:#f0f4f8; padding:40px 0; text-align:center; }
-.logo-section img { max-width:100%; }
-
-/* FORM */
-.form-section { padding:60px 0; }
-.form-section h3 { text-align:center; font-size:28px; margin-bottom:30px; }
-.form-row { margin-bottom:20px; text-align:center; }
-.form-row input,
-.form-row select {
-  width:200px;
-  padding:10px;
-  font-size:16px;
-  border:1px solid #ccc;
-  border-radius:4px;
-}
-.phone-row input { width:120px; }
-.phone-row .dash { margin:0 8px; }
-
-/* CHECKBOX ROW */
-.check-row { display:flex; justify-content:center; gap:20px; }
-.check-row label { font-size:14px; }
-
-/* SUBMIT */
-.submit-btn {
-  display:block;
-  width:100%;
-  max-width:400px;
-  margin:30px auto 0;
-  padding:14px;
-  background:#002d72;
-  color:#fff;
-  font-size:20px;
-  border:none;
-  border-radius:4px;
-  cursor:pointer;
-}
-
-/* FOOTER */
-.footer-section { background:#f0f4f8; padding:40px 0; text-align:center; }
-.footer-text { color:#333; line-height:1.6; }
-.footer-small { color:#777; display:block; margin-top:20px; }
-
-/* responsive */
-@media (max-width:768px) {
-  .hero-title h2 { font-size:28px; }
-  .hero-title .sub { font-size:18px; }
-  .slide { flex:0 0 140px; }
-  .cta-btn { font-size:18px; padding:12px 30px; }
-  .form-row input,
-  .form-row select { width:90%; max-width:300px; }
-  .phone-row { flex-wrap:wrap; justify-content:center; }
-}
-/* form 섹션 공통 */
-.form-section .form-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-/* 각 입력창 & 셀렉트 공통 */
-.form-row input,
-.form-row select {
-  flex: 1 1 200px;     /* 최소 200px, 여유 있을 땐 늘어나도록 */
-  max-width: 250px;    /* 최대 너비 제한 */
-  padding: 0.5em;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-/* 통신사+전화번호 줄은 살짝 다르게 */
-.phone-row {
-  justify-content: center;
-}
-.phone-row .dash {
-  align-self: center;
-  margin: 0 6px;
-}
-
-/* 제출 버튼 줄 */
-.submit-btn {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 0.75em;
-  font-size: 1.1rem;
-  background: #002d72;
-  color: #fff;
-  border:none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-/* form 섹션 공통 */
-.form-section .form-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start; /* <-- 가운데(center) → 왼쪽(start) 정렬 */
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-/* 각 입력창 & 셀렉트 공통 */
-.form-row input,
-.form-row select {
-  flex: 0 0 180px;    /* 고정폭 180px */
-  padding: 0.5em;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-/* 통신사 셀렉트만 조금 넓게 하고 싶다면 */
-.form-row select#carrier {
-  flex-basis: 200px;
-}
-
-/* 전화번호 칸(010 / 1234 / 5678)은 균일하게 */
-.phone-row input {
-  flex-basis: 120px;
-}
-
-/* 대시(–) 마진은 그대로 */
-.phone-row .dash {
-  align-self: center;
-  margin: 0 6px;
-}
-
-/* 제출 버튼 줄 */
-.submit-btn {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 0.75em;
-  font-size: 1.1rem;
-  background: #002d72;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-/* ───────────────────────────────────────────────────────────────────────── */
-/* QUICK FORM SIZING (예시 사이트와 동일 너비) */
-.form-section .form-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-/* 이름 */
-.form-row input#name {
-  flex: 0 0 200px;
-}
-
-/* 통신사 셀렉트 */
-.form-row select#carrier {
+.slide {
   flex: 0 0 180px;
+  margin: 0 10px;
 }
-
-/* 전화번호 세 칸 */
-.phone-row input {
-  flex: 0 0 120px;
-}
-
-/* 보험유형 셀렉트 */
-.form-row select#type {
-  flex: 0 0 220px;
-}
-
-/* 제출 버튼 (정 중앙, 너비 고정) */
-.submit-btn {
+.slide img {
+  width: 100%;
   display: block;
-  width: 280px;
-  margin: 24px auto 0;
-  padding: 0.75em;
-  font-size: 1.1rem;
-  background: #002d72;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 8px;
 }
+
+/* CTA */
+.cta-wrapper {
+  text-align: center;
+}
+.cta-btn {
+  display: inline-block;
+  background: #22c1ff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background .3s;
+}
+.cta-btn:hover {
+  background: #1aaedf;
+}
+.cta-text {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
 /* ───────────────────────────────────────────────────────────────────────── */
+/* INSURER LIST */
+.logo-section {
+  background: #f7fafc;
+  padding: 40px 0;
+  text-align: center;
+}
+.logo-section img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ───────────────────────────────────────────────────────────────────────── */
-/* 정확히 픽셀 고정 (우선순위 최상) */
+/* FORM SECTION */
+.form-section {
+  padding: 60px 0 80px;
+}
+.form-section h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 32px;
+  color: #002d72;
+  font-weight: 700;
+}
+
+/* flex form rows */
 #consult-form .form-row {
   display: flex;
   align-items: center;
@@ -544,40 +151,109 @@ body { font-family:'Noto Sans KR',sans-serif; }
   margin-bottom: 16px;
 }
 
-/* 이름 칸: 200px */
-#consult-form .form-row > input#name {
-  flex: 0 0 200px !important;
-  max-width: 200px !important;
+/* 이름 필드 (200px) */
+#consult-form .form-row:first-child > input#name {
+  flex: 0 0 100%;
+  max-width: 100%;
+  /* 풀 폭 사용하고 싶으시면 위처럼, 
+     200px 고정하고 싶으면 아래 두 줄로 바꿔주세요. */
+/*  flex: 0 0 200px !important;
+  max-width: 200px !important; */
 }
 
-/* 통신사 셀렉트: 180px */
-#consult-form .form-row > select#carrier {
-  flex: 0 0 180px !important;
-  max-width: 180px !important;
-}
-
-/* 전화번호 각 칸: 120px */
-#consult-form .phone-row > input {
+/* 통신사 (180px) */
+#consult-form select#carrier {
   flex: 0 0 120px !important;
   max-width: 120px !important;
 }
 
-/* 보험유형 셀렉트: 220px */
-#consult-form .form-row > select#type {
-  flex: 0 0 220px !important;
-  max-width: 220px !important;
+/* 전화번호 칸 (칸당 120px) */
+#consult-form .phone-row > input {
+  flex: 0 0 120px !important;
+  max-width: 120px !important;
+}
+#consult-form .phone-row .dash {
+  margin: 0 8px;
+  color: #777;
 }
 
-/* placeholder 글자 정렬 */
+/* 보험유형 (풀 폭) */
+#consult-form select#type {
+  flex: 1;
+}
+
+/* 공통 input/select 스타일 */
 #consult-form input,
 #consult-form select {
-  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+#consult-form input:focus,
+#consult-form select:focus {
+  border-color: #22c1ff;
 }
 
-/* 제출 버튼 중앙 정렬, 너비 고정 */
+/* 제출 버튼 중앙, 고정 폭 */
 #consult-form .submit-btn {
   display: block;
   width: 280px;
-  margin: 24px auto 0 !important;
+  margin: 24px auto 0;
+  padding: 14px;
+  background: #002d72;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .3s;
 }
+#consult-form .submit-btn:hover {
+  background: #001f5b;
+}
+
+/* iframe 숨기기 */
+#consult-form + iframe {
+  display: none;
+}
+
 /* ───────────────────────────────────────────────────────────────────────── */
+/* FOOTER */
+.footer-section {
+  background: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+.footer-text {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #555;
+}
+.footer-small {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title h2 { font-size: 28px; }
+  .hero-title .sub { font-size: 16px; }
+  .cta-btn { width: 100%; }
+  #consult-form .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  #consult-form .form-row:first-child > input#name {
+    max-width: 100%;
+  }
+  #consult-form select#carrier {
+    max-width: 100%;
+  }
+  #consult-form .phone-row input {
+    max-width: 100%;
+  }
+}
