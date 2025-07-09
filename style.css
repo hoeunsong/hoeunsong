@@ -52,11 +52,7 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 .footer-section{text-align:center;padding:20px;color:#555;font-size:14px;background:#f0f4f8}
 .footer-section small{display:block;margin-top:8px;color:#999}
 @media (max-width: 768px) {
-  /* 로고 리스트 섹션 자체를 통째로 감춥니다 */
-  .logo-section {
-    display: none;
-  }
-}
+
 /* 관리자 페이지 필터 바 */
 .filter-bar {
   display: flex;
