@@ -613,36 +613,26 @@ body {
     margin: 0 8px;    /* 좌우 여백 조금만 */
   }
 }
-/* ────────────────────────────────────
-   BODY 좌우 사이드에 파란 세로 선 추가
-──────────────────────────────────── */
-body {
-  position: relative; /* ::before/after 용 */
+/* 1) 섹션에는 배경 없앰 */
+.slider-section {
+  background: none;
+  padding: 0;          /* 원하시는 경우 섹션 패딩 초기화 */
 }
 
-/* 좌측 선 */
-body::before,
-body::after {
-  content: "";
-  position: fixed;       /* 화면 스크롤과 상관없이 고정 */
-  top: 0;
-  bottom: 0;
-  width: 8px;            /* 선 굵기 */
-  background: #002d72;   /* 파란색 */
-  z-index: 9999;
+/* 2) 내부 .slider-inner에만 배경과 패딩 줌 */
+.slider-section .container .slider-inner {
+  background: #002d72;
+  padding: 60px 0;              /* 위아래 여백 */
+  border-radius: 8px;           /* 모서리 라운드 (선택) */
 }
 
-body::before {
-  left: 0;   /* 왼쪽 모서리 */
+/* 3) 글자·슬라이더·버튼 간 간격도 필요시 조정 */
+.slider-inner .hero-title {
+  margin-bottom: 40px;
 }
-body::after {
-  right: 0;  /* 오른쪽 모서리 */
+.slider-inner .slider-wrapper {
+  margin-bottom: 30px;
 }
-
-/* 모바일에서는 선이 너무 크니 조금 줄이기 */
-@media (max-width: 768px) {
-  body::before,
-  body::after {
-    width: 4px;
-  }
+.slider-inner .cta-wrapper {
+  margin-top: 20px;
 }
