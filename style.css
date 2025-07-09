@@ -47,9 +47,40 @@ body {
 /* ───────────────────────────────────────────────────────────────────────── */
 /* SLIDER SECTION */
 .slider-section {
+  /* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ↓ 기존 .slider-section 블록을 모두 지우고, 이걸 붙여넣어 주세요. */
+.slider-section {
+  /* 이제 배경은 container 내부에서만 보여집니다 */
+  background: none;
+  padding: 0;
+}
+
+/* container 안에 파란 박스를 만들고, 슬라이더 넘치는 부분은 숨깁니다 */
+.slider-section .container {
   background: #002d72;
-  padding: 60px 0 40px;
-  color: #fff;
+  border-radius: 8px;
+  padding: 60px 0;      /* 위아래 여백 */
+  overflow: hidden;      /* 트랙이 넘어가는 부분 잘라냄 */
+}
+
+/* 필요하다면 슬라이더 높이 조정 */
+.slider-wrapper {
+  position: relative;
+  height: 120px;         /* 슬라이드 이미지 높이에 맞춰 조정하세요 */
+}
+
+/* 기존 애니메이션, 레이아웃 설정은 그대로 두시면 됩니다 */
+.slider-track {
+  display: flex;
+  animation: scroll 13s linear infinite;
+}
+
 }
 .hero-title {
   text-align: center;
