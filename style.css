@@ -231,3 +231,22 @@ form { max-width:800px; margin:0 auto; }
     padding: 6px 16px !important;
   }
 }
+/* style.css 맨 아래에 추가 */
+
+.hero-title .sub {
+  display: inline-block;           /* 배경이 텍스트 크기에 딱 맞게 */
+  font-size: 1.6rem !important;    /* 원하는 폰트 크기 */
+  font-weight: 700 !important;     /* 더 두껍게 */
+  color: #002d72 !important;       /* 파란색 텍스트 */
+  background-color: #ffffff !important; /* 흰 박스 배경 */
+  padding: 10px 28px !important;   /* 위아래 10px, 좌우 28px */
+  border-radius: 4px !important;   /* 모서리 둥글게 (선택) */
+}
+
+/* 모바일 조정 */
+@media (max-width: 768px) {
+  .hero-title .sub {
+    font-size: 1.3rem !important;
+    padding: 8px 20px !important;
+  }
+}
