@@ -115,3 +115,12 @@ form { max-width:800px; margin:0 auto; }
     display: block;
   }
 }
+/* MOBILE: 보험사 리스트 이미지 확대 */
+@media (max-width: 768px) {
+  .logo-section .container img {
+    width: 90% !important;  /* 가로폭의 90% */
+    height: auto !important; /* 비율 유지 */
+    margin: 0 auto;
+    display: block;
+  }
+}
