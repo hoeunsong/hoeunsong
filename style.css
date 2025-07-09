@@ -18,7 +18,7 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 
 /* 슬라이더 스타일 */
 .slider-wrapper{overflow:hidden}
-.slider-track{display:flex;animation:scroll 13s linear infinite}
+.slider-track{display:flex;width: 200%;animation:scroll 13s linear infinite}
 .slide{flex:0 0 20%;padding:0 10px}
 .slide img{width:100%;border-radius:8px;display:block}
 
