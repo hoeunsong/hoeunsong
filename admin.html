@@ -23,3 +23,23 @@
   <script src="admin.js"></script>
 </body>
 </html>
+<div class="filter-bar">
+  <select id="filter-date">
+    <option value="">전체 날짜</option>
+    <!-- 동적으로 옵션 채워넣기 -->
+  </select>
+
+  <select id="filter-hour">
+    <option value="">전체 시간</option>
+    <!-- 0~23 -->
+  </select>
+
+  <select id="filter-minute">
+    <option value="">전체 분</option>
+    <!-- 0~59 -->
+  </select>
+
+  <button id="applyFilter">필터 적용</button>
+</div>
+
+<table id="consult-table">…</table>

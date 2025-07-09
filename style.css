@@ -57,3 +57,15 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
     display: none;
   }
 }
+/* 관리자 페이지 필터 바 */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.filter-bar select,
+.filter-bar button {
+  padding: 8px 12px;
+  font-size: 14px;
+}
