@@ -3,43 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>상담 신청 관리</title>
+  <title>관리자 페이지</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>상담 신청 관리</h1>
-    <p>신청 내역을 확인하고 CSV로 다운로드할 수 있습니다.</p>
+
+    <!-- 필터 영역 -->
+    <div id="filters">
+      <label>날짜:
+        <input type="date" id="filter-date" />
+      </label>
+      <label>보험유형:
+        <select id="filter-type">
+          <option value="">전체</option>
+          <option>건강보험</option><option>치아보험</option>
+          <option>암보험</option><option>운전자보험</option>
+          <option>기타</option>
+        </select>
+      </label>
+      <button id="applyFilters">적용</button>
+      <button id="downloadBtn">엑셀 다운로드</button>
+    </div>
+
+    <!-- 테이블 -->
     <table id="consult-table">
       <thead>
         <tr>
-          <th>이름</th><th>통신사</th><th>전화번호</th><th>보험유형</th><th>신청시간</th>
+          <th>이름</th>
+          <th>통신사</th>
+          <th>전화번호</th>
+          <th>보험유형</th>
+          <th>신청시간</th>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
-    <button id="downloadBtn">CSV로 다운로드</button>
   </div>
+
   <script src="admin.js"></script>
 </body>
 </html>
-<div class="filter-bar">
-  <select id="filter-date">
-    <option value="">전체 날짜</option>
-    <!-- 동적으로 옵션 채워넣기 -->
-  </select>
-
-  <select id="filter-hour">
-    <option value="">전체 시간</option>
-    <!-- 0~23 -->
-  </select>
-
-  <select id="filter-minute">
-    <option value="">전체 분</option>
-    <!-- 0~59 -->
-  </select>
-
-  <button id="applyFilter">필터 적용</button>
-</div>
-
-<table id="consult-table">…</table>

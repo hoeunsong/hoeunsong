@@ -111,26 +111,6 @@
 
   </div>
 
-  <script src="script.js"></script>
-  <script>
-    document.getElementById('consult-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      // 로컬 스토리지 저장
-      const data = {
-        name: form.name.value,
-        carrier: form.carrier.value,
-        phone: `${form.phone1.value}-${form.phone2.value}-${form.phone3.value}`,
-        type: form.type.value,
-        time: new Date().toLocaleString()
-      };
-      const list = JSON.parse(localStorage.getItem('consults')||'[]');
-      list.push(data);
-      localStorage.setItem('consults', JSON.stringify(list));
-
-      // 'thankyou.html'로 이동
-      window.location.href = 'thankyou.html';
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
