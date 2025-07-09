@@ -211,3 +211,9 @@ form { max-width:800px; margin:0 auto; }
     padding-bottom: 0 !important;
   }
 }
+/* HERO TITLE SUBTITLE: 폰트 크기 & 박스 크기 확대 */
+.hero-title .subtitle {
+  font-size: 1.5rem !important;    /* 글자 크기 키우기 */
+  padding: 8px 24px !important;    /* 위아래 8px, 좌우 24px */
+  border-radius: 4px;              /* 모서리 둥글게 유지 */
+}
