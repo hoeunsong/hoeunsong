@@ -200,3 +200,14 @@ form { max-width:800px; margin:0 auto; }
     display: block;
   }
 }
+/* MOBILE: logo-section 위·아래 패딩 제거 */
+@media (max-width: 768px) {
+  .logo-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .logo-section .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
