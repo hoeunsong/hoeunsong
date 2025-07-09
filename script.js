@@ -33,16 +33,20 @@ document.getElementById('consult-form').addEventListener('submit', e => {
 document.getElementById("consult-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const name  = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const type  = document.getElementById("type").value;
+  const name    = document.getElementById("name").value.trim();
+  const carrier = document.getElementById("carrier").value;
+  const p1      = document.getElementById("phone1").value.trim();
+  const p2      = document.getElementById("phone2").value.trim();
+  const p3      = document.getElementById("phone3").value.trim();
+  const type    = document.getElementById("type").value;
 
-  if (!name || !phone || !type) {
+  if (!name || !carrier || !p1 || !p2 || !p3 || !type) {
     alert("모든 항목을 채워주세요.");
     return;
   }
 
-  // 기존 로컬스토리지 저장 로직
+  const phone = `${carrier}-${p1}-${p2}-${p3}`;
+
   const consults = JSON.parse(localStorage.getItem("consults") || "[]");
   consults.push({
     name,
@@ -52,6 +56,5 @@ document.getElementById("consult-form").addEventListener("submit", function(e) {
   });
   localStorage.setItem("consults", JSON.stringify(consults));
 
-  // 성공 시 Thank you 로 이동
   window.location.href = "thankyou.html";
 });

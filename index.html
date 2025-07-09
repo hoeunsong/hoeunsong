@@ -74,9 +74,10 @@
 
   <!-- FORM SECTION -->
   <section id="form" class="form-section">
-    <div class="container">
-      <h3>빠른 상담 신청</h3>
-       <form id="consult-form">
+  <div class="container">
+    <h3>빠른 상담 신청</h3>
+
+    <form id="consult-form">
       <!-- 이름 -->
       <div class="form-row">
         <input
@@ -89,13 +90,41 @@
       </div>
 
       <!-- 연락처 -->
-      <div class="form-row">
+       <div class="form-row">
+        <select id="carrier" name="carrier" required>
+          <option value="">통신사 선택</option>
+          <option value="LG">LG</option>
+          <option value="KT">KT</option>
+          <option value="SKT">SKT</option>
+        </select>
+      </div>
+
+      <!-- 전화번호 3단계 -->
+      <div class="form-row phone-row">
         <input
           type="tel"
-          id="phone"
-          name="phone"
-          placeholder="연락처 (01012341234)"
-          pattern="[0-9]{10,11}"
+          id="phone1"
+          name="phone1"
+          placeholder="010"
+          pattern="[0-9]{3}"
+          required
+        />
+        <span class="dash">–</span>
+        <input
+          type="tel"
+          id="phone2"
+          name="phone2"
+          placeholder="1234"
+          pattern="[0-9]{3,4}"
+          required
+        />
+        <span class="dash">–</span>
+        <input
+          type="tel"
+          id="phone3"
+          name="phone3"
+          placeholder="5678"
+          pattern="[0-9]{4}"
           required
         />
       </div>
