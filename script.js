@@ -1,3 +1,4 @@
+// script.js
 function submitToSheet(e) {
   e.preventDefault();
   const form = e.target;
@@ -16,9 +17,7 @@ function submitToSheet(e) {
     headers:{ 'Content-Type': 'application/json' }
   })
   .then(r => r.json())
-  .then(() => {
-    window.location.href = 'thankyou.html';
-  })
+  .then(()=> window.location.href = 'thankyou.html')
   .catch(console.error);
 
   return false;

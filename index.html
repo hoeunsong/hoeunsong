@@ -68,41 +68,38 @@
     </section>
 
     <!-- FORM SECTION -->
-     <section id="form" class="form-section">
-      <h3>빠른 상담 신청</h3>
-     <formid="consult-form"
-  action="https://script.google.com/macros/s/AKfycbx2u1WMTK473xMp4efFWt8BFSzHbhIFLEwWPWj0jNSA14hhW4Rba1JRLTN2IIuknwNUrQ/exec"
-        method="POST"
-        onsubmit="return submitToSheet(event)"
-        target="thankyouFrame"
->
-  <!-- 여기부터 폼 필드들 -->
+<section id="form" class="form-section">
+  <h3>빠른 상담 신청</h3>
+  <form
+    id="consult-form"
+    action="https://script.google.com/macros/s/AKfycbx2u1WMTK473xMp4efFWt8BFSzHbhIFLEwWPWj0jNSA14hhW4Rba1JRLTN2IIuknwNUrQ/exec"
+    method="POST"
+    onsubmit="return submitToSheet(event)"
+    target="thankyouFrame"
+  >
+    <input type="text" name="name" placeholder="이름" required />
 
-      
-        <input type="text" name="name" placeholder="이름" required>
+    <div class="row phone-row">
+      <select name="carrier" required>
+        <option value="">통신사 선택</option>
+        <option>LG</option><option>KT</option><option>SKT</option>
+      </select>
+      <input type="tel" name="phone1" placeholder="010" pattern="\d{3}" required /><span>–</span>
+      <input type="tel" name="phone2" placeholder="1234" pattern="\d{3,4}" required /><span>–</span>
+      <input type="tel" name="phone3" placeholder="5678" pattern="\d{4}" required />
+    </div>
 
-        <div class="row phone-row">
-          <select name="carrier" required>
-            <option value="">통신사 선택</option>
-            <option>LG</option><option>KT</option><option>SKT</option>
-          </select>
-          <input type="tel" name="phone1" placeholder="010" pattern="\d{3}" required>
-          <span>–</span>
-          <input type="tel" name="phone2" placeholder="1234" pattern="\d{3,4}" required>
-          <span>–</span>
-          <input type="tel" name="phone3" placeholder="5678" pattern="\d{4}" required>
-        </div>
+    <select name="type" required>
+      <option value="">문의가 필요한 보험 유형</option>
+      <option>건강보험</option><option>치아보험</option>
+      <option>암보험</option><option>운전자보험</option><option>기타</option>
+    </select>
 
-        <select name="type" required>
-          <option value="">문의가 필요한 보험 유형</option>
-          <option>건강보험</option><option>치아보험</option>
-          <option>암보험</option><option>운전자보험</option><option>기타</option>
-        </select>
+    <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
+  </form>
+  <iframe name="thankyouFrame" style="display:none;"></iframe>
+</section>
 
-        <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
-      </form>
-      <iframe name="thankyouFrame" style="display:none;"></iframe>
-    </section>
 
     <!-- FOOTER -->
     <footer class="footer-section">
@@ -115,25 +112,6 @@
   </div>
 
   <script src="script.js"></script>
-  <script>
-    document.getElementById('consult-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      // 로컬 스토리지 저장
-      const data = {
-        name: form.name.value,
-        carrier: form.carrier.value,
-        phone: `${form.phone1.value}-${form.phone2.value}-${form.phone3.value}`,
-        type: form.type.value,
-        time: new Date().toLocaleString()
-      };
-      const list = JSON.parse(localStorage.getItem('consults')||'[]');
-      list.push(data);
-      localStorage.setItem('consults', JSON.stringify(list));
 
-      // 'thankyou.html'로 이동
-      window.location.href = 'thankyou.html';
-    });
-  </script>
 </body>
 </html>
