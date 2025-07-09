@@ -1,6 +1,21 @@
-// 슬라이더 애니메이션 초기화
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".slider-track");
-  // track width 자동 계산 필요 시 생략 가능
-  // CSS keyframes로 무한 슬라이드 처리하므로 여기서는 따로 코드 없습니다.
+// 인피니트 슬라이더 수동 제어
+const track = document.querySelector('.slider-track');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+let scrollAmount = 0;
+const slideWidth = track.children[0].getBoundingClientRect().width + 16; // padding
+
+prev.addEventListener('click', () => {
+  scrollAmount = Math.max(0, scrollAmount - slideWidth);
+  track.style.transform = `translateX(-${scrollAmount}px)`;
 });
+next.addEventListener('click', () => {
+  scrollAmount = Math.min(track.scrollWidth/2, scrollAmount + slideWidth);
+  track.style.transform = `translateX(-${scrollAmount}px)`;
+});
+
+// (선택) 자동 슬라이드 일시정지 on hover
+document.querySelector('.slider-section')
+  .addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+document.querySelector('.slider-section')
+  .addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
