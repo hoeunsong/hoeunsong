@@ -53,6 +53,7 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 .footer-section small{display:block;margin-top:8px;color:#999}
 @media (max-width: 768px) {
 
+}
 /* 관리자 페이지 필터 바 */
 .filter-bar {
   display: flex;
