@@ -74,83 +74,56 @@
 
   <!-- FORM SECTION -->
   <section id="form" class="form-section">
-  <div class="container">
-    <h3>빠른 상담 신청</h3>
+    <div class="container">
+      <div class="form-card">
+        <h3>빠른 상담 신청</h3>
 
-    <form id="consult-form">
-      <!-- 이름 -->
-      <div class="form-row">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="이름"
-          required
-        />
+        <form id="consult-form" action="thankyou.html" method="GET" target="_self">
+          <!-- 1. 이름 -->
+          <div class="form-row">
+            <input type="text" id="name" name="name" placeholder="이름" required />
+          </div>
+
+          <!-- 2. 통신사 + 전화번호 3칸 -->
+          <div class="form-row phone-group">
+            <select id="carrier" name="carrier" required>
+              <option value="">통신사 선택</option>
+              <option value="LG">LG</option>
+              <option value="KT">KT</option>
+              <option value="SKT">SKT</option>
+            </select>
+            <input type="tel" id="phone1" name="phone1" placeholder="010" pattern="[0-9]{3}" required />
+            <span class="dash">–</span>
+            <input type="tel" id="phone2" name="phone2" placeholder="1234" pattern="[0-9]{3,4}" required />
+            <span class="dash">–</span>
+            <input type="tel" id="phone3" name="phone3" placeholder="5678" pattern="[0-9]{4}" required />
+          </div>
+
+          <!-- 3. 보험유형 -->
+          <div class="form-row">
+            <select id="type" name="type" required>
+              <option value="">문의가 필요한 보험 유형</option>
+              <option value="건강보험">건강보험</option>
+              <option value="치아보험">치아보험</option>
+              <option value="암보험">암보험</option>
+              <option value="운전자보험">운전자보험</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+
+          <!-- 4. 체크박스 -->
+          <div class="form-row check-row">
+            <label><input type="checkbox" name="agree1" required /> 전체동의 (수집/제3자제공)</label>
+            <label><input type="checkbox" name="agree2" required /> 개인정보 수집·이용 동의</label>
+            <label><input type="checkbox" name="agree3" required /> 개인정보 제3자 제공 동의</label>
+          </div>
+
+          <!-- 5. 제출 버튼 -->
+          <div class="form-row btn-row">
+            <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
+          </div>
+        </form>
       </div>
-
-      <!-- 연락처 -->
-       <div class="form-row">
-        <select id="carrier" name="carrier" required>
-          <option value="">통신사 선택</option>
-          <option value="LG">LG</option>
-          <option value="KT">KT</option>
-          <option value="SKT">SKT</option>
-        </select>
-      </div>
-
-      <!-- 전화번호 3단계 -->
-      <div class="form-row phone-row">
-         <input
-          type="tel"
-          id="phone1"
-          name="phone1"
-          placeholder="010"
-          pattern="[0-9]{3}"
-          required
-        />
-        <span class="dash">–</span>
-
-        <!-- 중간 -->
-        <input
-          type="tel"
-          id="phone2"
-          name="phone2"
-          placeholder="1234"
-          pattern="[0-9]{3,4}"
-          required
-        />
-        <span class="dash">–</span>
-
-        <!-- 끝 -->
-        <input
-          type="tel"
-          id="phone3"
-          name="phone3"
-          placeholder="5678"
-          pattern="[0-9]{4}"
-          required
-        />
-      </div>
-
-      <!-- 보험유형 -->
-      <div class="form-row">
-        <select id="type" name="type" required>
-          <option value="">문의가 필요한 보험 유형</option>
-          <option value="건강보험">건강보험</option>
-          <option value="치아보험">치아보험</option>
-          <option value="암보험">암보험</option>
-          <option value="운전자보험">운전자보험</option>
-          <option value="기타">기타</option>
-        </select>
-      </div>
-
-      <!-- 제출 버튼 -->
-      <button type="submit" class="submit-btn">
-        통합 견적비교 조회 →
-      </button>
-    </form>
-      <iframe name="thankyouFrame" style="display:none;"></iframe>
     </div>
   </section>
 
