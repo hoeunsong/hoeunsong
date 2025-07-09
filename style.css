@@ -103,3 +103,39 @@ input, select {
     white-space: nowrap;
   }
 }
+/*───────────────────────────────
+  1. 데스크탑·모바일 공통: 
+     상단 슬라이더 좌우 흰 여백 & 중앙정렬
+───────────────────────────────*/
+.slider-section,
+.hero-title {
+  background-color: #002d72; /* 기존 파란 배경 살리면서 */
+}
+
+/* container 전체 폭 대신 내부에 16px 여백 줌 */
+.slider-section .slider-wrapper,
+.hero-title .container {
+  max-width: 1200px;    /* 원본과 동일한 최대 폭 */
+  margin: 0 auto;       /* 가운데 정렬 */
+  padding: 0 16px;      /* 좌우 흰 여백 */
+  box-sizing: border-box;
+}
+
+/*───────────────────────────────
+  2. 모바일 전용: 
+     로고 리스트 가로 스크롤 
+───────────────────────────────*/
+@media (max-width: 768px) {
+  .logo-section .container {
+    padding: 0 16px;            /* 좌우 여백 */
+    overflow-x: auto;           /* 가로 스크롤 */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;        /* 줄바꿈 금지 */
+  }
+  .logo-section .container img {
+    display: inline-block;
+    width: auto;
+    height: 80px;               /* 필요에 따라 조절 */
+    margin: 0 8px;
+  }
+}
