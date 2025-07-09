@@ -535,3 +535,49 @@ body { font-family:'Noto Sans KR',sans-serif; }
   cursor: pointer;
 }
 /* ───────────────────────────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────────────────────────────── */
+/* 정확히 픽셀 고정 (우선순위 최상) */
+#consult-form .form-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* 이름 칸: 200px */
+#consult-form .form-row > input#name {
+  flex: 0 0 200px !important;
+  max-width: 200px !important;
+}
+
+/* 통신사 셀렉트: 180px */
+#consult-form .form-row > select#carrier {
+  flex: 0 0 180px !important;
+  max-width: 180px !important;
+}
+
+/* 전화번호 각 칸: 120px */
+#consult-form .phone-row > input {
+  flex: 0 0 120px !important;
+  max-width: 120px !important;
+}
+
+/* 보험유형 셀렉트: 220px */
+#consult-form .form-row > select#type {
+  flex: 0 0 220px !important;
+  max-width: 220px !important;
+}
+
+/* placeholder 글자 정렬 */
+#consult-form input,
+#consult-form select {
+  box-sizing: border-box;
+}
+
+/* 제출 버튼 중앙 정렬, 너비 고정 */
+#consult-form .submit-btn {
+  display: block;
+  width: 280px;
+  margin: 24px auto 0 !important;
+}
+/* ───────────────────────────────────────────────────────────────────────── */
