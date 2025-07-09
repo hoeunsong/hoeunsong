@@ -83,3 +83,23 @@ input, select {
 .footer-section { background:#f0f4f8; padding:40px 0; text-align:center; }
 .footer-section p { color:#555; margin-bottom:16px; }
 .footer-section small { color:#999; }
+/* ---------------------------
+   모바일에서 로고 리스트 일자 스크롤
+   --------------------------- */
+@media (max-width: 768px) {
+  .logo-section .container {
+    padding: 0 16px;            /* 좌우 여백 */
+    overflow-x: auto;           /* 가로 스크롤 허용 */
+    -webkit-overflow-scrolling: touch;
+  }
+  .logo-section .container img {
+    display: inline-block;
+    width: auto;
+    height: 80px;               /* 로고 높이 고정 (필요시 조절) */
+    margin: 0 8px;              /* 로고 사이 마진 */
+  }
+  /* 불필요한 차일드 요소 줄바꿈 방지 */
+  .logo-section .container {
+    white-space: nowrap;
+  }
+}
