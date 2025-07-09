@@ -73,32 +73,48 @@
   </section>
 
   <!-- FORM SECTION -->
-  <section id="form" class="form-section">
+   <section id="form" class="form-section">
     <div class="container">
-      <div class="form-card">
-        <h3>빠른 상담 신청</h3>
+      <h3>빠른 상담 신청</h3>
+      <form id="consult-form">
+        <!-- 이름 -->
+        <div class="form-row">
+          <input type="text" id="name" name="name" placeholder="이름" required />
+        </div>
 
-        <form id="consult-form" action="thankyou.html" method="GET" target="_self">
-          <!-- 1. 이름 -->
-          <div class="form-row">
-            <input type="text" id="name" name="name" placeholder="이름" required />
-          </div>
-
-          <!-- 2. 통신사 + 전화번호 3칸 -->
-          <div class="form-row phone-group">
-            <select id="carrier" name="carrier" required>
-              <option value="">통신사 선택</option>
-              <option value="LG">LG</option>
-              <option value="KT">KT</option>
-              <option value="SKT">SKT</option>
-            </select>
-            <input type="tel" id="phone1" name="phone1" placeholder="010" pattern="[0-9]{3}" required />
-            <span class="dash">–</span>
-            <input type="tel" id="phone2" name="phone2" placeholder="1234" pattern="[0-9]{3,4}" required />
-            <span class="dash">–</span>
-            <input type="tel" id="phone3" name="phone3" placeholder="5678" pattern="[0-9]{4}" required />
-          </div>
-
+        <!-- 전화번호 (통신사 + 3칸) -->
+        <div class="form-row phone-row">
+          <select id="carrier" name="carrier" required>
+            <option value="">통신사 선택</option>
+            <option value="LG">LG</option>
+            <option value="KT">KT</option>
+            <option value="SKT">SKT</option>
+          </select>
+          <input
+            type="tel"
+            id="phone1"
+            name="phone1"
+            placeholder="123"
+            pattern="[0-9]{2,3}"
+            required
+          />
+          <input
+            type="tel"
+            id="phone2"
+            name="phone2"
+            placeholder="1234"
+            pattern="[0-9]{3,4}"
+            required
+          />
+          <input
+            type="tel"
+            id="phone3"
+            name="phone3"
+            placeholder="5678"
+            pattern="[0-9]{4}"
+            required
+          />
+        </div>
           <!-- 3. 보험유형 -->
           <div class="form-row">
             <select id="type" name="type" required>
