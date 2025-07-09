@@ -156,3 +156,24 @@ form { max-width:800px; margin:0 auto; }
     margin: 0 auto;
   }
 }
+/*───────────────────────────────────────
+  MOBILE: insurer-list 이미지를 화면 전체 폭으로, 수평 중앙 정렬
+────────────────────────────────────────*/
+@media (max-width: 768px) {
+  /* 컨테이너 padding/margin 초기화 */
+  .logo-section .container {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+
+  /* 이미지 폭을 100vw로, 중앙에 놓기 */
+  .logo-section .container img {
+    width: 100vw !important;
+    max-width: none !important;
+    height: auto !important;
+    display: block;
+    /* 좌우 차이를 보정해 중앙으로 이동 */
+    margin-left: calc((100% - 100vw) / 2) !important;
+  }
+}
