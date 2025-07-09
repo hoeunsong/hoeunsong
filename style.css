@@ -138,3 +138,21 @@ form { max-width:800px; margin:0 auto; }
     max-width: none !important;
   }
 }
+/* MOBILE: insurer-list 이미지를 화면 폭 전체로 확장 */
+@media (max-width: 768px) {
+  /* 1) 컨테이너 좌우 패딩 제거 */
+  .logo-section .container {
+    padding: 0 !important;
+    margin: 0 -16px;         /* 기존 좌우 16px 패딩 보정 */
+    overflow: hidden;        /* 가로 스크롤 방지 */
+  }
+
+  /* 2) 이미지 폭 100% 고정 */
+  .logo-section .container img {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
