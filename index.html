@@ -6,8 +6,37 @@
   <title>Life Insurance</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
         rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+  <style>
+    body { margin:0; padding:0; font-family:'Noto Sans KR',sans-serif; background:#fff; }
+    .container { width:90%; max-width:1200px; margin:0 auto; }
+    .hero-title { background:#002d72; color:#fff; text-align:center; padding:80px 0; }
+    .hero-title h1 { font-size:36px; margin:0; }
+    .hero-title .subtitle { display:inline-block; background:#fff; color:#002d72; padding:6px 16px; margin-top:12px; font-size:20px; border-radius:4px; }
+    .slider-section { position:relative; overflow:hidden; background:#002d72; padding:40px 0; }
+    .slider-wrapper { width:200%; display:flex; animation:scroll 13s linear infinite; }
+    .slide { flex:0 0 auto; width:7.692%; /* 100/13 */ padding:0 10px; }
+    .slide img { width:100%; display:block; border-radius:8px; }
+    @keyframes scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .cta-section { text-align:center; padding:40px 0; }
+    .cta-btn { display:inline-block; background:#1ac7ff; color:#fff; padding:14px 28px; border-radius:28px; text-decoration:none; font-size:18px; }
+    .cta-text { margin-top:8px; color:#333; font-size:14px; }
+    .logo-section img { width:100%; margin:40px 0; }
+    section { margin-bottom:60px; }
+    /* form */
+    .form-section { text-align:center; }
+    .form-section h3 { font-size:24px; margin-bottom:24px; }
+    .form-section .row { display:flex; justify-content:center; gap:8px; margin-bottom:12px; }
+    .form-section input, .form-section select { padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px; }
+    .form-section .dash { line-height:32px; }
+    .form-section .check-row label { margin-right:16px; font-size:14px; }
+    .submit-btn { background:#002d72; color:#fff; padding:12px 0; width:60%; max-width:400px; border:none; border-radius:4px; font-size:18px; cursor:pointer; }
+    footer.footer-section { background:#f1faff; padding:40px 0; text-align:center; }
+    .footer-text { font-size:14px; color:#333; line-height:1.6; margin-bottom:16px; }
+    .footer-small { font-size:12px; color:#666; }
+  </style>
 </head>
 <body>
 
@@ -22,36 +51,34 @@
   <!-- CONTINUOUS SLIDER -->
   <section class="slider-section">
     <div class="slider-wrapper">
-      <div class="slider-track">
-        <!-- 원본 13장 -->
-        <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
-        <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
-        <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
-        <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
-        <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
-        <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
-        <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
-        <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
-        <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
-        <div class="slide"><img src="slide10.png" alt="배너10"/></div>
-        <div class="slide"><img src="slide11.png" alt="배너11"/></div>
-        <div class="slide"><img src="slide12.png" alt="배너12"/></div>
-        <div class="slide"><img src="slide13.png" alt="배너13"/></div>
-        <!-- 복제 13장 -->
-        <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
-        <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
-        <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
-        <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
-        <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
-        <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
-        <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
-        <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
-        <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
-        <div class="slide"><img src="slide10.png" alt="배너10"/></div>
-        <div class="slide"><img src="slide11.png" alt="배너11"/></div>
-        <div class="slide"><img src="slide12.png" alt="배너12"/></div>
-        <div class="slide"><img src="slide13.png" alt="배너13"/></div>
-      </div>
+      <!-- 원본 13장 -->
+      <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
+      <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
+      <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
+      <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
+      <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
+      <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
+      <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
+      <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
+      <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
+      <div class="slide"><img src="slide10.png" alt="배너10"/></div>
+      <div class="slide"><img src="slide11.png" alt="배너11"/></div>
+      <div class="slide"><img src="slide12.png" alt="배너12"/></div>
+      <div class="slide"><img src="slide13.png" alt="배너13"/></div>
+      <!-- 복제 13장 -->
+      <div class="slide"><img src="slide1.png"  alt="배너1"/></div>
+      <div class="slide"><img src="slide2.png"  alt="배너2"/></div>
+      <div class="slide"><img src="slide3.png"  alt="배너3"/></div>
+      <div class="slide"><img src="slide4.png"  alt="배너4"/></div>
+      <div class="slide"><img src="slide5.png"  alt="배너5"/></div>
+      <div class="slide"><img src="slide6.png"  alt="배너6"/></div>
+      <div class="slide"><img src="slide7.png"  alt="배너7"/></div>
+      <div class="slide"><img src="slide8.png"  alt="배너8"/></div>
+      <div class="slide"><img src="slide9.png"  alt="배너9"/></div>
+      <div class="slide"><img src="slide10.png" alt="배너10"/></div>
+      <div class="slide"><img src="slide11.png" alt="배너11"/></div>
+      <div class="slide"><img src="slide12.png" alt="배너12"/></div>
+      <div class="slide"><img src="slide13.png" alt="배너13"/></div>
     </div>
   </section>
 
@@ -70,92 +97,54 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2>왜 Life Insurance인가?</h2>
-      <p>맞춤형 상품 추천과 전문 컨설턴트의 1:1 상담으로<br>
-         당신에게 최적화된 보험 솔루션을 제공합니다.</p>
-    </div>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section id="services" class="services-section">
-    <div class="container">
-      <h2>주요 서비스</h2>
-      <div class="services-grid">
-        <div class="service-item">
-          <img src="icon1.png" alt="안심 보장"/>
-          <h3>안심 보장</h3>
-          <p>위험 상황을 대비한<br>최고의 보장 플랜 제공</p>
-        </div>
-        <div class="service-item">
-          <img src="icon2.png" alt="전문 컨설팅"/>
-          <h3>전문 컨설팅</h3>
-          <p>경력 컨설턴트의<br>맞춤형 상담 지원</p>
-        </div>
-        <div class="service-item">
-          <img src="icon3.png" alt="간편 신청"/>
-          <h3>간편 신청</h3>
-          <p>빠르고 쉬운<br>온라인 신청 시스템</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FORM SECTION -->
-  <form
-  id="consult-form"
-  action="https://formspree.io/f/mgyvjppa"
-  method="POST"
->
-  <!-- 새로 추가: 전송 후 이동할 페이지 -->
-  <input type="hidden" name="_next" value="thankyou.html" />
+  <section id="form" class="form-section">
+    <div class="container">
+      <h3>빠른 상담 신청</h3>
+      <form
+        id="consult-form"
+        action="https://formspree.io/f/mgyvjppa"
+        method="POST"
+      >
+        <!-- 전송 후 thankyou.html로 -->
+        <input type="hidden" name="_next" value="thankyou.html"/>
 
-  <!-- 1. 이름 + 전화번호 -->
-  <div class="row">
-    <input type="text"   name="name"   placeholder="이름" required />
-    <input type="tel"    name="phone1" placeholder="010"  required />
-    <span class="dash">–</span>
-    <input type="tel"    name="phone2" placeholder="1234" required />
-    <span class="dash">–</span>
-    <input type="tel"    name="phone3" placeholder="5678" required />
-  </div>
+        <div class="row">
+          <input type="text"   name="name"   placeholder="이름" required/>
+          <input type="tel"    name="phone1" placeholder="010"  required/>
+          <span class="dash">–</span>
+          <input type="tel"    name="phone2" placeholder="1234" required/>
+          <span class="dash">–</span>
+          <input type="tel"    name="phone3" placeholder="5678" required/>
+        </div>
 
-  <!-- 2. 보험유형 -->
-  <div class="row">
-    <select name="type" required>
-      <option value="">문의가 필요한 보험 유형</option>
-      <option value="건강보험">건강보험</option>
-      <option value="치아보험">치아보험</option>
-      <option value="암보험">암보험</option>
-      <option value="운전자보험">운전자보험</option>
-    </select>
-  </div>
+        <div class="row">
+          <select name="type" required>
+            <option value="">문의가 필요한 보험 유형</option>
+            <option value="건강보험">건강보험</option>
+            <option value="치아보험">치아보험</option>
+            <option value="암보험">암보험</option>
+            <option value="운전자보험">운전자보험</option>
+          </select>
+        </div>
 
-  <!-- 3. 약관동의 -->
-  <div class="row check-row">
-    <label><input type="checkbox" name="agree1" required /> 견적확인 (수집/제3자 제공)</label>
-    <label><input type="checkbox" name="agree2" required /> 개인정보 수집·이용 동의</label>
-    <label><input type="checkbox" name="agree3" required /> 개인정보 제3자 제공 동의</label>
-  </div>
+        <div class="row check-row">
+          <label><input type="checkbox" name="agree1" required/> 견적확인 (수집/제3자 제공)</label>
+          <label><input type="checkbox" name="agree2" required/> 개인정보 수집·이용 동의</label>
+          <label><input type="checkbox" name="agree3" required/> 개인정보 제3자 제공 동의</label>
+        </div>
 
-  <!-- 4. 전송버튼 -->
-  <button type="submit" class="submit-btn">
-    통합 견적비교 조회 →
-  </button>
-</form>
-    <!-- 5. 폼 전송 후 thankyou.html을 로드할 숨은 iframe -->
-    <iframe name="thankyouFrame" style="display:none;"></iframe>
+        <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
+      </form>
     </div>
   </section>
 
-  <!-- FOOTER SECTION -->
+  <!-- FOOTER -->
   <footer class="footer-section">
     <div class="container">
       <p class="footer-text">
-        생명보험 | 종신보험 | 간병인보험 | 암보험<br>
-        건강보험 | 태아보험 | 연금보험 등<br>
+        생명보험 | 종신보험 | 간병인보험 | 암보험<br/>
+        건강보험 | 태아보험 | 연금보험 등<br/>
         국내 유명사 보험별 비교 견적을 통해 좋은 보험을 찾아 드립니다.
       </p>
       <small class="footer-small">
