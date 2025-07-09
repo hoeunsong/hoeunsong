@@ -529,3 +529,27 @@ body {
     box-sizing: border-box;
   }
 }
+/* 같은 줄에 4칸 배치 */
+.phone-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 통신사 드롭다운과 모든 input 동등하게 flex:1 적용 */
+.phone-row select,
+.phone-row input {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccd0d5;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* 구분자 대시 */
+.dash {
+  flex: 0;
+  font-size: 1.2rem;
+  color: #555;
+}
