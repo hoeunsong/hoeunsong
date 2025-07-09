@@ -28,3 +28,30 @@ document.getElementById('consult-form').addEventListener('submit', e => {
   e.preventDefault();
   window.location.href = 'thankyou.html';
 });
+// script.js
+
+document.getElementById("consult-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name  = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const type  = document.getElementById("type").value;
+
+  if (!name || !phone || !type) {
+    alert("모든 항목을 채워주세요.");
+    return;
+  }
+
+  // 기존 로컬스토리지 저장 로직
+  const consults = JSON.parse(localStorage.getItem("consults") || "[]");
+  consults.push({
+    name,
+    phone,
+    type,
+    timestamp: new Date().toLocaleString()
+  });
+  localStorage.setItem("consults", JSON.stringify(consults));
+
+  // 성공 시 Thank you 로 이동
+  window.location.href = "thankyou.html";
+});

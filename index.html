@@ -60,7 +60,7 @@
       </div>
       <div class="cta-wrapper">
         <a href="#form" class="cta-btn">보험사별 보험 간편 견적비교 →</a>
-        <p class="cta-text">보험사별 견적비교를 통해 내게 맞는 최적화된 보험을 찾아드려요</p>
+        <p class="cta-text">보험사별 견적 비교를 통해 최적의 보험을 찾아드려요</p>
       </div>
     </div>
   </section>
@@ -76,31 +76,47 @@
   <section id="form" class="form-section">
     <div class="container">
       <h3>빠른 상담 신청</h3>
-      <form id="consult-form" action="https://formspree.io/f/mgvyjjpa" method="POST" target="thankyouFrame">
-        <div class="row">
-          <input type="text"  name="name"   placeholder="이름" required/>
-          <input type="tel"   name="phone1" placeholder="010"  required/>
-          <span class="dash">–</span>
-          <input type="tel"   name="phone2" placeholder="1234" required/>
-          <span class="dash">–</span>
-          <input type="tel"   name="phone3" placeholder="5678" required/>
-        </div>
-        <div class="row">
-          <select name="type" required>
-            <option value="">문의가 필요한 보험 유형</option>
-            <option value="건강보험">건강보험</option>
-            <option value="치아보험">치아보험</option>
-            <option value="암보험">암보험</option>
-            <option value="운전자보험">운전자보험</option>
-          </select>
-        </div>
-        <div class="row check-row">
-          <label><input type="checkbox" name="agree1" required/> 견적확인 (수집/제공)</label>
-          <label><input type="checkbox" name="agree2" required/> 개인정보 수집·이용 동의</label>
-          <label><input type="checkbox" name="agree3" required/> 개인정보 제3자 제공 동의</label>
-        </div>
-        <button type="submit" class="submit-btn">통합 견적비교 조회 →</button>
-      </form>
+       <form id="consult-form">
+      <!-- 이름 -->
+      <div class="form-row">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="이름"
+          required
+        />
+      </div>
+
+      <!-- 연락처 -->
+      <div class="form-row">
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="연락처 (01012341234)"
+          pattern="[0-9]{10,11}"
+          required
+        />
+      </div>
+
+      <!-- 보험유형 -->
+      <div class="form-row">
+        <select id="type" name="type" required>
+          <option value="">문의가 필요한 보험 유형</option>
+          <option value="건강보험">건강보험</option>
+          <option value="치아보험">치아보험</option>
+          <option value="암보험">암보험</option>
+          <option value="운전자보험">운전자보험</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+
+      <!-- 제출 버튼 -->
+      <button type="submit" class="submit-btn">
+        통합 견적비교 조회 →
+      </button>
+    </form>
       <iframe name="thankyouFrame" style="display:none;"></iframe>
     </div>
   </section>
