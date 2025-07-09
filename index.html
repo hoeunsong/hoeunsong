@@ -11,70 +11,76 @@
 </head>
 <body>
 
-  <!-- HEADER/BACKGROUND -->
+  <!-- HERO HEADER -->
   <header class="hero-header">
-    <img src="bg-header.jpg" alt="배경 이미지" class="hero-bg"/>
-    <div class="hero-text">
+    <img src="bg-header.jpg" alt="가정의 행복" class="hero-bg"/>
+    <div class="hero-inner container">
       <h1>보험사별 보험서비스</h1>
-      <p>견적을 간편하게 비교해요</p>
+      <p class="hero-sub">견적을 간편하게 비교해요</p>
     </div>
   </header>
 
-  <!-- CONTINUOUS SLIDER -->
+  <!-- SLIDER SECTION -->
   <section class="slider-section">
-    <button class="slider-btn prev">‹</button>
-    <div class="slider-window">
-      <ul class="slider-track">
-        <!-- 원본 13장 -->
-        <li><img src="slide1.png" alt="배너1"/></li>
-        <li><img src="slide2.png" alt="배너2"/></li>
-        <li><img src="slide3.png" alt="배너3"/></li>
-        <li><img src="slide4.png" alt="배너4"/></li>
-        <li><img src="slide5.png" alt="배너5"/></li>
-        <li><img src="slide6.png" alt="배너6"/></li>
-        <li><img src="slide7.png" alt="배너7"/></li>
-        <li><img src="slide8.png" alt="배너8"/></li>
-        <li><img src="slide9.png" alt="배너9"/></li>
-        <li><img src="slide10.png" alt="배너10"/></li>
-        <li><img src="slide11.png" alt="배너11"/></li>
-        <li><img src="slide12.png" alt="배너12"/></li>
-        <li><img src="slide13.png" alt="배너13"/></li>
-        <!-- 복제 13장 for infinite -->
-        <li><img src="slide1.png"  alt="배너1"/></li>
-        <li><img src="slide2.png"  alt="배너2"/></li>
-        <li><img src="slide3.png"  alt="배너3"/></li>
-        <li><img src="slide4.png"  alt="배너4"/></li>
-        <li><img src="slide5.png"  alt="배너5"/></li>
-        <li><img src="slide6.png"  alt="배너6"/></li>
-        <li><img src="slide7.png"  alt="배너7"/></li>
-        <li><img src="slide8.png"  alt="배너8"/></li>
-        <li><img src="slide9.png"  alt="배너9"/></li>
-        <li><img src="slide10.png" alt="배너10"/></li>
-        <li><img src="slide11.png" alt="배너11"/></li>
-        <li><img src="slide12.png" alt="배너12"/></li>
-        <li><img src="slide13.png" alt="배너13"/></li>
-      </ul>
+    <div class="slider-container container">
+      <button class="slider-btn prev">‹</button>
+      <div class="slider-window">
+        <ul class="slider-track">
+          <!-- 원본 13장 -->
+          <li class="slide"><img src="slide1.png"  alt="배너1"/></li>
+          <li class="slide"><img src="slide2.png"  alt="배너2"/></li>
+          <li class="slide"><img src="slide3.png"  alt="배너3"/></li>
+          <li class="slide"><img src="slide4.png"  alt="배너4"/></li>
+          <li class="slide"><img src="slide5.png"  alt="배너5"/></li>
+          <li class="slide"><img src="slide6.png"  alt="배너6"/></li>
+          <li class="slide"><img src="slide7.png"  alt="배너7"/></li>
+          <li class="slide"><img src="slide8.png"  alt="배너8"/></li>
+          <li class="slide"><img src="slide9.png"  alt="배너9"/></li>
+          <li class="slide"><img src="slide10.png" alt="배너10"/></li>
+          <li class="slide"><img src="slide11.png" alt="배너11"/></li>
+          <li class="slide"><img src="slide12.png" alt="배너12"/></li>
+          <li class="slide"><img src="slide13.png" alt="배너13"/></li>
+          <!-- 복제 13장 -->
+          <li class="slide"><img src="slide1.png"  alt="배너1"/></li>
+          <li class="slide"><img src="slide2.png"  alt="배너2"/></li>
+          <li class="slide"><img src="slide3.png"  alt="배너3"/></li>
+          <li class="slide"><img src="slide4.png"  alt="배너4"/></li>
+          <li class="slide"><img src="slide5.png"  alt="배너5"/></li>
+          <li class="slide"><img src="slide6.png"  alt="배너6"/></li>
+          <li class="slide"><img src="slide7.png"  alt="배너7"/></li>
+          <li class="slide"><img src="slide8.png"  alt="배너8"/></li>
+          <li class="slide"><img src="slide9.png"  alt="배너9"/></li>
+          <li class="slide"><img src="slide10.png" alt="배너10"/></li>
+          <li class="slide"><img src="slide11.png" alt="배너11"/></li>
+          <li class="slide"><img src="slide12.png" alt="배너12"/></li>
+          <li class="slide"><img src="slide13.png" alt="배너13"/></li>
+        </ul>
+      </div>
+      <button class="slider-btn next">›</button>
     </div>
-    <button class="slider-btn next">›</button>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA SECTION -->
   <section class="cta-section">
-    <a href="#form" class="cta-btn">보험사별 보험 간편 견적비교 →</a>
-    <p class="cta-text">보험사별 견적비교를 통해 내게 맞는 최적화된 보험을 찾아드려요</p>
+    <div class="container">
+      <a href="#form" class="cta-btn">보험사별 보험 간편 견적비교 →</a>
+      <p class="cta-text">보험사별 견적비교를 통해 내게 맞는 최적화된 보험을 찾아드려요</p>
+    </div>
   </section>
 
   <!-- LOGO GRID -->
   <section class="logo-section">
-    <img src="insurer-list.png" alt="국내 32개 공식인증 보험사 리스트"/>
+    <div class="container">
+      <img src="insurer-list.png" alt="국내 32개 공식인증 보험사 리스트"/>
+    </div>
   </section>
 
-  <!-- FORM -->
+  <!-- FORM SECTION -->
   <section id="form" class="form-section">
     <div class="container">
       <h2>빠른 상담 신청</h2>
       <form id="consult-form">
-        <div class="row">
+        <div class="row phone-row">
           <input type="text"  id="name"   name="name"   placeholder="이름" required/>
           <input type="tel"   id="phone1" name="phone1" placeholder="010"  required/>
           <span class="dash">–</span>
@@ -92,7 +98,7 @@
           </select>
         </div>
         <div class="row check-row">
-          <label><input type="checkbox" name="agree1" required/> 견적확인 (수집/제공)</label>
+          <label><input type="checkbox" name="agree1" required/> 견적확인 (수집·제공)</label>
           <label><input type="checkbox" name="agree2" required/> 개인정보 수집·이용 동의</label>
           <label><input type="checkbox" name="agree3" required/> 개인정보 제3자 제공 동의</label>
         </div>
@@ -107,7 +113,7 @@
       <p>생명보험 | 종신보험 | 간병인보험 | 암보험<br>
          건강보험 | 태아보험 | 연금보험 등<br>
          국내 유명 보험사별 비교 견적을 통해 좋은 보험을 찾아 드립니다.</p>
-      <small>ⓒ 2025 Life Insurance. All Rights Reserved.</small>
+      <small>ⓒ 2025 Life Insurance</small>
     </div>
   </footer>
 
