@@ -14,18 +14,14 @@
     .hero-title .subtitle { display:inline-block; background:#fff; color:#002d72; padding:6px 16px; margin-top:12px; font-size:20px; border-radius:4px; }
     .slider-section { position:relative; overflow:hidden; background:#002d72; padding:40px 0; }
     .slider-wrapper { width:200%; display:flex; animation:scroll 13s linear infinite; }
-    .slide { flex:0 0 auto; width:7.692%; /* 100/13 */ padding:0 10px; }
+    .slide { flex:0 0 auto; width:7.692%; padding:0 10px; }
     .slide img { width:100%; display:block; border-radius:8px; }
-    @keyframes scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
     .cta-section { text-align:center; padding:40px 0; }
     .cta-btn { display:inline-block; background:#1ac7ff; color:#fff; padding:14px 28px; border-radius:28px; text-decoration:none; font-size:18px; }
     .cta-text { margin-top:8px; color:#333; font-size:14px; }
     .logo-section img { width:100%; margin:40px 0; }
     section { margin-bottom:60px; }
-    /* form */
     .form-section { text-align:center; }
     .form-section h3 { font-size:24px; margin-bottom:24px; }
     .form-section .row { display:flex; justify-content:center; gap:8px; margin-bottom:12px; }
@@ -106,8 +102,8 @@
         action="https://formspree.io/f/mgyvjppa"
         method="POST"
       >
-        <!-- 전송 후 thankyou.html로 -->
-        <input type="hidden" name="_next" value="thankyou.html"/>
+        <!-- 전송 성공 시 절대 경로로 thankyou.html로 이동 -->
+        <input type="hidden" name="_next" value="https://hoeunsong.github.io/hoeunsong/thankyou.html"/>
 
         <div class="row">
           <input type="text"   name="name"   placeholder="이름" required/>
