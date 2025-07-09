@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>상담 신청 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>상담 신청 관리</h1>
+    <p>신청 내역을 확인하고 CSV로 다운로드할 수 있습니다.</p>
+    <table id="consult-table">
+      <thead>
+        <tr>
+          <th>이름</th><th>통신사</th><th>전화번호</th><th>보험유형</th><th>신청시간</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button id="downloadBtn">CSV로 다운로드</button>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
