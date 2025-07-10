@@ -4,7 +4,7 @@ document.getElementById('consult-form').addEventListener('submit', function(e) {
   const form = e.target;
   const formData = new FormData(form);
 
-  fetch('https://script.google.com/macros/s/AKfycbzwjfyIDIeB1rF7xDW-6uvz2v6wYly9uXX5Cqe0uKmT8jarx8tCE0Se03RaAnW6AZH0BA/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzvHJeyZA3kGfXwjp2T2cwpLlq6NiO4o4ZI9dStgJHq8nkbWcZ5_7JjS32iLKdl9gsEWw/exec', {
     method: 'POST',
     body: formData
   })
