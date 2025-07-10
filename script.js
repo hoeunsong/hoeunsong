@@ -1,8 +1,7 @@
-// script.js
 function submitToSheet(e) {
   e.preventDefault();
   const form = e.target;
-  const payload = {
+  const data = {
     name:    form.name.value,
     carrier: form.carrier.value,
     phone1:  form.phone1.value,
@@ -12,25 +11,18 @@ function submitToSheet(e) {
   };
 
   fetch(form.action, {
-    method:  'POST',
-    body:    JSON.stringify(payload),
-    headers: { 'Content-Type': 'application/json' }
+    method: 'POST',
+    body:   JSON.stringify(data),
+    headers:{ 'Content-Type': 'application/json' }
   })
-    .then(res => {
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return res.json();
-    })
-    .then(json => {
-      if (json.result === 'success') {
-        window.location.href = 'thankyou.html';
-      } else {
-        throw new Error(JSON.stringify(json));
-      }
-    })
-    .catch(err => {
-      console.error('submitToSheet error:', err);
-      alert('제출에 실패했습니다. 콘솔을 확인해주세요.');
-    });
+  .then(r => r.json())
+  .then(() => {
+    window.location.href = 'thankyou.html';
+  })
+  .catch(err => {
+    console.error(err);
+    alert('제출에 실패했습니다. 잠시 후 다시 시도해주세요.');
+  });
 
   return false;
 }
