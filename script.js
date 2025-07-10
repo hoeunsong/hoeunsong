@@ -1,8 +1,8 @@
 // script.js
 function submitToSheet(e) {
-  e.preventDefault();
+  e.preventDefault();               // 폼 기본 제출 동작 막기
   const form = e.target;
-  const data = {
+  const payload = {
     name:    form.name.value,
     carrier: form.carrier.value,
     phone1:  form.phone1.value,
@@ -12,13 +12,19 @@ function submitToSheet(e) {
   };
 
   fetch(form.action, {
-    method: 'POST',
-    body:   JSON.stringify(data),
-    headers:{ 'Content-Type': 'application/json' }
+    method:  'POST',
+    body:    JSON.stringify(payload),
+    headers: { 'Content-Type': 'application/json' }
   })
-  .then(r => r.json())
-  .then(()=> window.location.href = 'thankyou.html')
-  .catch(console.error);
+    .then(res => res.json())
+    .then(() => {
+      // 성공 시 thankyou.html 로 이동
+      window.location.href = 'thankyou.html';
+    })
+    .catch(err => {
+      console.error('전송 실패', err);
+      alert('제출에 실패했습니다. 다시 시도해주세요.');
+    });
 
-  return false;
+  return false;  // onsubmit 리턴으로 폼 제출 차단
 }
