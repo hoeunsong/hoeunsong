@@ -1,5 +1,3 @@
-// ✅ script.js 내용은 이렇게만 있어야 정상 동작합니다
-// 이 코드는 로컬 저장용일 뿐, 전송은 form action이 iframe으로 처리합니다
 document.getElementById('consult-form').addEventListener('submit', function(e) {
   const form = e.target;
   const data = {
