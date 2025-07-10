@@ -8,7 +8,7 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 /* HEADER */
 .header{display:flex;justify-content: space-between;align-items: center;padding: 20px 0;background: #fff;}
 .logo{font-size:24px;font-weight:700;color:#002d72;margin-left: 8px;}
-.nav a{background: #002d72;color: #fff !important;text-decoration: none;font-weight: 500;padding: 8px 16px;border-radius: 4px;margin-right: 8px;}
+.nav a{background: #004a9f;color: #fff !important;text-decoration: none;font-weight: 500;padding: 8px 16px;border-radius: 4px;margin-right: 8px;}
 
 /* SLIDER SECTION */
 .slider-section{background:#002d72;color:#fff;padding:60px 0;border-left:2px solid #002d72;border-right:2px solid #002d72}
@@ -30,11 +30,11 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 
 /* CTA */
 .cta-wrapper{text-align:center;margin:40px 0}
-.cta-btn{display:inline-block;background:#00bfff;color:#fff;padding:16px 40px;font-size:24px;font-weight:700;border-radius:40px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.cta-btn{display:inline-block;background:#00bfff;color:#fff;padding:16px 40px;font-size:24px;font-weight:700;border-radius:40px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);white-space: nowrap;}
 .cta-text{margin-top:12px;color:rgba(255,255,255,0.8)}
 
 /* INSURER LIST */
-.logo-section{padding: 0;text-align:center;border-left:2px solid #002d72;border-right:2px solid #002d72}
+.logo-section{padding:40px 0;text-align:center;border-left:2px solid #002d72;border-right:2px solid #002d72}
 .logo-section img{max-width:100%;border:1px solid #eaeaea;border-radius:8px}
 
 /* FORM SECTION */
@@ -65,4 +65,25 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 .filter-bar button {
   padding: 8px 12px;
   font-size: 14px;
+}
+@media (max-width: 768px) {
+  /* 전화번호 입력 줄 세로 정렬 */
+  .row.phone-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  /* 슬라이더 애니메이션 속도 조절 */
+  .slider-track {
+    animation-duration: 10s;
+  }
+}
+.cta-link {
+  background: #002d72;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.cta-link:hover {
+  background: #004a9f;
 }
