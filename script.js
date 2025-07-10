@@ -1,8 +1,5 @@
-// script.js
-document.getElementById('consult-form')
-  .addEventListener('submit', () => {
-    // 0.5초 뒤에 'thankyou.html'로 이동
-    setTimeout(() => {
-      window.location.href = 'thankyou.html';
-    }, 500);
-});
+function goToThankYou(e) {
+  e.target.submit(); // 폼 제출은 기본 방식으로 실행
+  setTimeout(() => window.location.href = 'thankyou.html', 300); // 리디렉션
+  return false;
+}
