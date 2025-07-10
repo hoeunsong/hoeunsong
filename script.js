@@ -1,28 +1,17 @@
-function submitToSheet(e) {
-  e.preventDefault();
+// script.js
+document.getElementById('consult-form').addEventListener('submit', function(e) {
+  // 로컬 스토리지 저장 (원하신다면)
   const form = e.target;
   const data = {
-    name:    form.name.value,
+    name: form.name.value,
     carrier: form.carrier.value,
-    phone1:  form.phone1.value,
-    phone2:  form.phone2.value,
-    phone3:  form.phone3.value,
-    type:    form.type.value
+    phone: `${form.phone1.value}-${form.phone2.value}-${form.phone3.value}`,
+    type: form.type.value,
+    time: new Date().toLocaleString()
   };
+  const list = JSON.parse(localStorage.getItem('consults') || '[]');
+  list.push(data);
+  localStorage.setItem('consults', JSON.stringify(list));
 
-  fetch(form.action, {
-    method: 'POST',
-    body:   JSON.stringify(data),
-    headers:{ 'Content-Type': 'application/json' }
-  })
-  .then(r => r.json())
-  .then(() => {
-    window.location.href = 'thankyou.html';
-  })
-  .catch(err => {
-    console.error(err);
-    alert('제출에 실패했습니다. 잠시 후 다시 시도해주세요.');
-  });
-
-  return false;
-}
+  // 폼은 기본 동작대로 iframe 으로 제출됩니다.
+});
