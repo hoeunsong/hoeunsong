@@ -1,5 +1,5 @@
 document.getElementById('consult-form').addEventListener('submit', function(e) {
-  e.preventDefault(); // 기본 제출 막기
+  e.preventDefault();
 
   const form = e.target;
   const formData = new FormData(form);
@@ -8,16 +8,16 @@ document.getElementById('consult-form').addEventListener('submit', function(e) {
     method: 'POST',
     body: formData
   })
-  .then(res => res.text())
-  .then(text => {
-    if (text.includes("성공") || text.includes("감사합니다")) {
-      window.location.href = "thankyou.html";
-    } else {
-      alert("제출에 실패했습니다.");
-    }
+  .then(res => {
+    if (!res.ok) throw new Error('Network response was not ok');
+    return res.text();
   })
-  .catch(err => {
-    console.error(err);
-    alert("서버 오류가 발생했습니다.");
+  .then(text => {
+    // 성공하면 감사합니다 페이지로 이동
+    window.location.href = 'thankyou.html';
+  })
+  .catch(error => {
+    alert('제출 중 오류가 발생했습니다. 다시 시도해 주세요.');
+    console.error(error);
   });
 });
