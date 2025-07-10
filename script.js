@@ -1,6 +1,6 @@
 // script.js
 function submitToSheet(e) {
-  e.preventDefault();               // 폼 기본 제출 동작 막기
+  e.preventDefault();
   const form = e.target;
   const payload = {
     name:    form.name.value,
@@ -16,15 +16,21 @@ function submitToSheet(e) {
     body:    JSON.stringify(payload),
     headers: { 'Content-Type': 'application/json' }
   })
-    .then(res => res.json())
-    .then(() => {
-      // 성공 시 thankyou.html 로 이동
-      window.location.href = 'thankyou.html';
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(json => {
+      if (json.result === 'success') {
+        window.location.href = 'thankyou.html';
+      } else {
+        throw new Error(JSON.stringify(json));
+      }
     })
     .catch(err => {
-      console.error('전송 실패', err);
-      alert('제출에 실패했습니다. 다시 시도해주세요.');
+      console.error('submitToSheet error:', err);
+      alert('제출에 실패했습니다. 콘솔을 확인해주세요.');
     });
 
-  return false;  // onsubmit 리턴으로 폼 제출 차단
+  return false;
 }
