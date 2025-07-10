@@ -1,5 +1,5 @@
 document.getElementById('consult-form').addEventListener('submit', function(e) {
-  e.preventDefault(); // 폼 제출 막기
+  e.preventDefault(); // 기본 제출 막기
 
   const form = e.target;
   const formData = new FormData(form);
@@ -10,10 +10,10 @@ document.getElementById('consult-form').addEventListener('submit', function(e) {
   })
   .then(res => res.text())
   .then(text => {
-    if (text.includes("성공") || text.includes("success")) {
-      window.location.href = "thankyou.html"; // 감사합니다 페이지로 이동
+    if (text.includes("성공") || text.includes("감사합니다")) {
+      window.location.href = "thankyou.html";
     } else {
-      alert("제출에 실패했습니다. 다시 시도해주세요.");
+      alert("제출에 실패했습니다.");
     }
   })
   .catch(err => {
