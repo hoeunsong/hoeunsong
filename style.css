@@ -44,7 +44,10 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 #consult-form input,
 #consult-form select{width:100%;padding:12px;border:1px solid #ccc;border-radius:4px;font-size:16px}
 .row.phone-row{display:flex;gap:8px;align-items:center}
-.row.phone-row span{font-size:20px;color:#333}
+.row.phone-row select { width: 100px;padding: 10px;font-size: 14px;}
+.row.phone-row input {width: 80px;padding: 10px;font-size: 16px;}
+.row.phone-row span{font-size:18px;color:#333}
+
 .submit-btn{background:#002d72;color:#fff;padding:16px;border:none;border-radius:4px;font-size:18px;font-weight:600;cursor:pointer;transition:opacity .2s}
 .submit-btn:hover{opacity:.9}
 
