@@ -1,42 +1,19 @@
 <?php
-require 'vendor/autoload.php';
-
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
-// 1. 입력값 받기
 $name = $_POST['name'] ?? '';
 $carrier = $_POST['carrier'] ?? '';
-$phone = $_POST['phone'] ?? '';
+$phone1 = $_POST['phone1'] ?? '';
+$phone2 = $_POST['phone2'] ?? '';
+$phone3 = $_POST['phone3'] ?? '';
 $type = $_POST['type'] ?? '';
-$timestamp = date('Y-m-d H:i:s');
 
-// 2. 기존 엑셀 불러오기 또는 새로 생성
-$filePath = 'insurance_submissions.xlsx';
+// 전화번호 조합
+$phone = $phone1 . '-' . $phone2 . '-' . $phone3;
 
-if (file_exists($filePath)) {
-    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($filePath);
-    $sheet = $spreadsheet->getActiveSheet();
-    $row = $sheet->getHighestRow() + 1;
-} else {
-    $spreadsheet = new Spreadsheet();
-    $sheet = $spreadsheet->getActiveSheet();
-    $sheet->fromArray(['Name', 'Carrier', 'Phone', 'Type', 'Timestamp'], NULL, 'A1');
-    $row = 2;
-}
+// 로그 형식 지정 (줄바꿈 추가)
+$log = "이름: $name\n통신사: $carrier\n연락처: $phone\n보험유형: $type\n\n";
 
-// 3. 데이터 삽입
-$sheet->setCellValue('A' . $row, $name);
-$sheet->setCellValue('B' . $row, $carrier);
-$sheet->setCellValue('C' . $row, $phone);
-$sheet->setCellValue('D' . $row, $type);
-$sheet->setCellValue('E' . $row, $timestamp);
+// 로그 파일에 저장
+file_put_contents("data.txt", $log, FILE_APPEND);
 
-// 4. 저장
-$writer = new Xlsx($spreadsheet);
-$writer->save($filePath);
-
-// 5. 완료 후 thankyou.html로 리디렉션
-header('Location: thankyou.html');
-exit;
+echo "ok";
 ?>
