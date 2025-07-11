@@ -87,3 +87,29 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 .cta-link:hover {
   background: #004a9f;
 }
+input::placeholder {
+  color: #999;
+}
+/* 전화번호 한 줄로 정렬 */
+.phone-row {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-row input {
+  flex: 1;
+}
+
+/* 문의유형을 select에서 input으로 바꿨을 경우 */
+input[name="inquiryType"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* placeholder 색상 */
+input::placeholder {
+  color: #999;
+}

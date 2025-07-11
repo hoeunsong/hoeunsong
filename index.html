@@ -77,18 +77,17 @@
 
     <div class="row phone-row">
       <select name="carrier" required>
-        <option value="">통신사 선택</option>
-        <option>LG</option><option>KT</option><option>SKT</option>
+      <option value="">통신사 선택</option>
+      <option value="SKT">SKT</option>
+      <option value="KT">KT</option>
+      <option value="LG">LG</option>
       </select>
       <input type="tel" name="phone1" placeholder="010" pattern="\d{3}" required /><span>–</span>
       <input type="tel" name="phone2" placeholder="1234" pattern="\d{3,4}" required /><span>–</span>
       <input type="tel" name="phone3" placeholder="5678" pattern="\d{4}" required />
     </div>
 
-    <select name="type" required>
-      <option value="">문의가 필요한 보험 유형</option>
-      <option>건강보험</option><option>치아보험</option>
-      <option>암보험</option><option>운전자보험</option><option>기타</option>
+    <input type="text" name="type" placeholder="문의가 필요한 보험 유형">
     </select>
 
     <button type="submit" class="your-button-class">통합 견적비교 조회 →</button>
