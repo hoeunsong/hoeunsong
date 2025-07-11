@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Life Insurance</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20250711">
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -73,11 +73,11 @@
   <form id="consult-form"
   action="https://hoeunsong.rf.gd/save.php" method="POST"
   >
-    <input type="text" name="name" placeholder="이름" required />
+    <input type="text" name="phone_mobile" class="mobile-only" placeholder="이름" required />
 
     <div class="row phone-row">
       <select name="carrier" required>
-      <option value="">통신사 선택</option>
+      <option value="">통신사</option>
       <option value="SKT">SKT</option>
       <option value="KT">KT</option>
       <option value="LG">LG</option>

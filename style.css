@@ -30,7 +30,7 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 
 /* CTA */
 .cta-wrapper{text-align:center;margin:40px 0}
-.cta-btn{display:inline-block;background:#00bfff;color:#fff;padding:16px 40px;font-size:24px;font-weight:700;border-radius:40px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);white-space: nowrap;}
+.cta-btn{display:inline-block;background:#00bfff;color:#fff;padding:16px 20px;font-size:24px;font-weight:700;border-radius:40px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);white-space: nowrap;}
 .cta-text{margin-top:12px;color:rgba(255,255,255,0.8)}
 
 /* INSURER LIST */
@@ -42,13 +42,13 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
 .form-section h3{text-align:center;font-size:24px;font-weight:700;margin-bottom:24px}
 #consult-form{display:flex;flex-direction:column;gap:16px}
 #consult-form input,
-#consult-form select{width:100%;padding:12px;border:1px solid #ccc;border-radius:4px;font-size:16px}
+#consult-form select{padding:12px;border:1px solid #ccc;border-radius:4px;font-size:16px}
 .row.phone-row{display:flex;gap:8px;align-items:center}
 .row.phone-row select { width: 100px;padding: 10px;font-size: 14px;}
 .row.phone-row input {width: 80px;padding: 10px;font-size: 16px;}
 .row.phone-row span{font-size:18px;color:#333}
 
-.submit-btn{background:#002d72;color:#fff;padding:16px;border:none;border-radius:4px;font-size:18px;font-weight:600;cursor:pointer;transition:opacity .2s}
+.submit-btn{background:#002d72;color:#fff;padding:18px 24px;border:none;border-radius:4px;font-size:22px;font-weight:700;cursor:pointer;transition:opacityb .2s}
 .submit-btn:hover{opacity:.9}
 
 /* FOOTER */
@@ -75,6 +75,31 @@ body{font-family:'Noto Sans KR',sans-serif;color:#002d72;line-height:1.5;backgro
     flex-direction: column;
     gap: 8px;
   }
+    .phone-row select,
+  .phone-row input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .phone-row span {
+    display: none;
+  }
+
+  /* 각 전화번호 input은 숨기고 */
+  .phone-row input[name="phone1"],
+  .phone-row input[name="phone2"],
+  .phone-row input[name="phone3"] {
+    display: none;
+  }
+
+  /* 새로 추가한 전체 전화번호 한 줄 input 보이게 */
+  .phone-row input[name="phone"] {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
   /* 슬라이더 애니메이션 속도 조절 */
   .slider-track {
     animation-duration: 10s;
@@ -115,4 +140,40 @@ input[name="inquiryType"] {
 /* placeholder 색상 */
 input::placeholder {
   color: #999;
+}
+@media (max-width: 768px) {
+  .cta-btn {
+    display: block;        /* 한 줄 전체 차지 */
+    width: 100%;           /* 화면 가득 */
+    font-size: 18px;       /* 글씨 크기 모바일용으로 조절 */
+    padding: 14px 12px;    /* 여백 줄이기 */
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .row.phone-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* PC용 번호 input은 모바일에서 숨김 */
+  .phone-row input[name="phone1"],
+  .phone-row input[name="phone2"],
+  .phone-row input[name="phone3"],
+  .phone-row span {
+    display: none;
+  }
+
+  /* 모바일 전용 한 줄 번호 input은 모바일에서 표시 */
+  .phone-row input.mobile-only {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .phone-row select {
+    width: 100%;
+  }
 }
